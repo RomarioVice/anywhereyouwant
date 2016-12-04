@@ -1,0 +1,217 @@
+/* === Remove input autofocus webkit === */
+*:focus {outline: none; }
+
+
+/* === Form Typography === */
+body {  height: 100%; font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;}
+.contact_form h2, .contact_form label {font-family:Georgia, Times, "Times New Roman", serif;}
+.form_hint, .required_notification {font-size: 11px;}
+
+/* === Canvas for Parallax === */
+.parallax-window {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	min-height: 600px;
+}
+
+/* === h1 === */
+.sign-h1 {
+	margin-top: 3%;
+	margin-bottom: 3%;
+	font-family: CCZoinks;
+	font-size: 56pt;
+}
+
+
+/* === Canvas === */
+.contact_form {
+	margin: auto;
+	min-width: 290px;
+	max-width: 290px;
+	background: burlywood;
+	padding: 10px 20px;
+	background: url(../img/bg-banner1.png);
+	border-radius: 30px;
+}
+
+/* === List Styles === */
+.contact_form ul {
+	text-align: center;
+    list-style-type:none;
+	list-style-position:outside;
+	margin:0px;
+	padding:0px;
+}
+.contact_form li{
+	padding:12px;
+}
+
+/* === Popup message === */
+.canceled {
+	font-size: medium;
+	color: red;
+	background: url(../img/bg-banner1.png);
+	border-radius: 30px;
+}
+
+.success {
+	font-size: medium;
+	color: #1cff00;
+	background: url(../img/bg-banner1.png);
+	border-radius: 30px;
+}
+
+/* === Form Header === */
+.contact_form h2 {
+	margin:0;
+	display: inline;
+}
+.required_notification {
+	color: burlywood;
+	margin:5px 0 0 0; 
+	display:inline;
+}
+
+/* === Form Elements === */
+.contact_form label {
+	width:150px;
+	display:inline-block;
+	color: white;
+}
+.contact_form input {
+	height:30px;
+	width:220px;
+	padding:0px 8px;
+}
+
+.contact_form select{
+	height:30px;
+	width:220px;
+	padding:5px 8px;
+}
+
+.contact_form p{
+	color: burlywood;
+	font-size: 12pt;
+	font-weight: 600;
+}
+	/* form element visual styles */
+	.contact_form input, .contact_form select {
+		border:1px solid #aaa;
+		box-shadow: 0px 0px 3px #ccc;
+		border-radius:2px;
+		padding-right:30px;
+		-moz-transition: padding .25s;
+		-webkit-transition: padding .25s;
+		-o-transition: padding .25s;
+		transition: padding .25s;
+	}
+	.contact_form input:focus, .contact_form select:focus {
+		background: #fff;
+		border:1px solid #555;
+		box-shadow: 0 0 3px #aaa;
+		padding-right:70px;
+	}
+
+/* === HTML5 validation styles === */	
+.contact_form input:required, .contact_form select:required {
+	background: #fff url(../img/red_asterisk.png) no-repeat 98% center;
+}
+.contact_form select:required {
+	background: #fff url(../img/red_asterisk.png) no-repeat 93% center;
+}
+.contact_form input:required:valid {
+	background: #fff url(../img/valid.png) no-repeat 98% center;
+	box-shadow: 0 0 5px #5cd053;
+	border-color: #28921f;
+}
+.contact_form select:required:valid {
+	background: #fff url(../img/valid.png) no-repeat 93% center;
+	box-shadow: 0 0 5px #5cd053;
+	border-color: #28921f;
+}
+.contact_form input:focus:invalid {
+	background: #fff url(../img/invalid.png) no-repeat 98% center;
+	box-shadow: 0 0 5px #d45252;
+	border-color: #b03535
+}
+
+.contact_form select:focus:invalid{
+	background: #fff url(../img/invalid.png) no-repeat 93% center;
+	box-shadow: 0 0 5px #d45252;
+	border-color: #b03535
+}
+
+/* === Form hints === */
+.form_hint {
+	background: #d45252;
+	border-radius: 3px 3px 3px 3px;
+	color: white;
+	margin-left:8px;
+	padding: 1px 6px;
+	z-index: 999; /* hints stay above all other elements */
+	position: absolute; /* allows proper formatting if hint is two lines */
+	display: none;
+}
+.form_hint::before {
+	content: "\25C0";
+	color:#d45252;
+	position: absolute;
+	top:1px;
+	left:-6px;
+}
+.contact_form input:focus + .form_hint {display: inline;}
+.contact_form input:required:valid + .form_hint {background: #28921f;}
+.contact_form input:required:valid + .form_hint::before {color:#28921f;}
+	
+/* === Button Style === */
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px;
+}
+
+button.submit {
+	background-color: #e450ff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#e450ff), to(#b147cc));
+	background: -webkit-linear-gradient(top, #e450ff, #b147cc);
+	background: -moz-linear-gradient(top, #e450ff, #b147cc);
+	background: -ms-linear-gradient(top, #e450ff, #b147cc);
+	background: -o-linear-gradient(top, #e450ff, #b147cc);
+	background: linear-gradient(top, #e450ff, #b147cc);
+	border: 1px solid #b147cc;
+	border-bottom: 1px solid #b147cc;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	box-shadow: inset 0 1px 0 0 #d695ff;
+	-webkit-box-shadow: 0 1px 0 0 #d695ff inset ;
+	-moz-box-shadow: 0 1px 0 0 #d695ff inset;
+	-ms-box-shadow: 0 1px 0 0 #d695ff inset;
+	-o-box-shadow: 0 1px 0 0 #d695ff inset;
+	color: white;
+	font-weight: bold;
+	padding: 6px 20px;
+	text-align: center;
+	text-shadow: 0 -1px 0 #6b2879;
+}
+button.submit:hover {
+	/*opacity:.85;*/
+	cursor: pointer; 
+}
+button.submit:active {
+	border: 1px solid #b147cc;
+	box-shadow: 0 0 10px 5px #73398d inset;
+	-webkit-box-shadow:0 0 10px 5px #73398d inset ;
+	-moz-box-shadow: 0 0 10px 5px #73398d inset;
+	-ms-box-shadow: 0 0 10px 5px #73398d inset;
+	-o-box-shadow: 0 0 10px 5px #73398d inset;
+	
+}

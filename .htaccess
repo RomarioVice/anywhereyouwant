@@ -1,0 +1,5 @@
+#установка кодировки по-умолчанию
+AddDefaultCharset utf-8
+
+#запрет листинга каталогов
+#Options -Indexes
