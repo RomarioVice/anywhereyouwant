@@ -31,7 +31,7 @@ html, body {
     font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
-    min-width: 375px;
+    min-width: 320px;
 }
 
     /*----index.php------*/
@@ -729,7 +729,7 @@ a.etc:hover {
     height: 30px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 320px) {
 
     html, body {
         overflow-x: hidden;

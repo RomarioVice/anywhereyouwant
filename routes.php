@@ -7,13 +7,13 @@
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
                 include('/blocks/connect.php');
+                include('/blocks/db.php');
                 include('/blocks/slider.php');
             ?>
             <div class="wrapper">
-                <h1 class="font-h1">Предоставляемые маршруты</h1>
+                <h1 class="font-h1">Предоставляемые маршруты</h1>>
                 <div class="bg-container-routes">
                     <!-- Your Content -->
-
                     <div id="container-routes">
                         <div class="normalazer">
 <!--                        <iframe id="gmap" src="https://www.google.com/maps/embed?pb=!1m24!1m8!1m3!1d10249847.74089996!2d29.1239111!3d51.1563366!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x40e0909500919a2d%3A0x36335efdc5856f84!2z0JTQvtC90LXRhtC6LCDQlNC-0L3QtdGG0LrQsNGPINC-0LHQu9Cw0YHRgtGM!3m2!1d48.015882999999995!2d37.80285!4m5!1s0x46b54afc73d4b0c9%3A0x3d44d6cc5757cf4c!2z0JzQvtGB0LrQstCwLCDQoNC-0YHRgdC40Y8!3m2!1d55.755826!2d37.6173!5e0!3m2!1sru!2sua!4v1475321707513" frameborder="0" style="border:0" allowfullscreen></iframe>-->
@@ -85,8 +85,8 @@
                             // Вызов функции, для вывода ссылок на экран
 
                             // Вывод информации из базы данных
-                            $result = mysql_query('SELECT * FROM services ORDER BY destination ASC LIMIT '.$start_pos.', '.$perpage) or die('error!');
-                            while ($row = mysql_fetch_array($result)) {
+                            $result = R::getAll('SELECT * FROM services ORDER BY destination ASC LIMIT '.$start_pos.', '.$perpage) or die('error!');
+                            foreach ($result as $row) {
                                 echo <<<EOT
                                     <a href="routes-view.php?type=services&id=$row[id_route]" class="info">
                                         <div class="routes-table-bg">
