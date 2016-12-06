@@ -6,8 +6,8 @@
             <?php
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
-                include('/blocks/connect.php');
                 include('/blocks/slider.php');
+                include('/blocks/db.php');
             ?>
 
 
@@ -22,11 +22,12 @@
                     <div class="col-xs-12 col-xs-offset-0 bg">
                         <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 main">
                             <?php
-                                $result = mysql_query("SELECT * FROM main"); //выбираем все строки из таблицы main
-                                $myrow = mysql_fetch_array($result); //обрабатываем полученные строки main как массив
+                                $result = R::getRow("SELECT * FROM main"); //выбираем все строки из таблицы main
+//                                $result = mysql_query("SELECT * FROM main");
+//                                $myrow = mysql_fetch_array($result); //обрабатываем полученные строки main как массив
                             echo <<< EOT
-                                <p class="main-pic-txt text-center"><img class="hvr-buzz-out main_pic" src="$myrow[main_pic]"></p>
-                                <p>$myrow[content]</p>
+                                <p class="main-pic-txt text-center"><img class="hvr-buzz-out main_pic" src="$result[main_pic]"></p>
+                                <p>$result[content]</p>
 EOT;
                             ?>
                         </div>
@@ -40,8 +41,8 @@ EOT;
 
                             <?php
                                 $i = 0;
-                                $result = mysql_query('SELECT * FROM news ORDER BY nDate DESC');
-                                while ($row = mysql_fetch_array($result)) {
+                                $result = R::GetAll('SELECT * FROM news ORDER BY nDate DESC');
+                                 foreach ($result as $row)  {
                                     $i++;
                                     if ($i==1) {
                                         require 'blocks/echoForIndex.php';
@@ -53,8 +54,8 @@ EOT;
 
                             <?php
                             $i = 0;
-                            $result = mysql_query('SELECT * FROM news ORDER BY nDate DESC');
-                            while ($row = mysql_fetch_array($result)) {
+                            $result = R::GetAll('SELECT * FROM news ORDER BY nDate DESC');
+                            foreach ($result as $row) {
                                 $i++;
                                 if ($i==2) {
                                     require 'blocks/echoForIndex.php';
@@ -67,8 +68,8 @@ EOT;
 
                             <?php
                             $i = 0;
-                            $result = mysql_query('SELECT * FROM news ORDER BY nDate DESC');
-                            while ($row = mysql_fetch_array($result)) {
+                            $result = R::GetAll('SELECT * FROM news ORDER BY nDate DESC');
+                            foreach ($result as $row) {
                                 $i++;
                                 if ($i==3) {
                                     require 'blocks/echoForIndex.php';
