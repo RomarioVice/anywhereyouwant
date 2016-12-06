@@ -39,7 +39,7 @@ html, body {
     font-family: 'AleksandraC';
     text-indent: 30px;
     text-align: justify;
-    padding: 5px 50px 5px 50px;
+    padding: 5px 0px 5px 0px;
     font-size: 13pt;
     color: #FFFFFF;
 }
@@ -69,7 +69,7 @@ html, body {
     background-color: #deb887;
     height: 500px;
     margin: 15px 0px;
-    color: white;
+    color: #000000;
     font-family: 'AleksandraC';
     border-radius: 25px;
 }
@@ -114,6 +114,7 @@ a.etc-main {
     color: #8a2be2;
     border-radius: 25px;
     border: 3px solid #8a2be2;
+    font-family: 'AleksandraC';
 }
 
 a.etc-main:hover {
@@ -144,6 +145,7 @@ a.etc-main:hover {
     padding-top: 30px;
     text-align: center;
     color: #DEB887;
+    font-family: 'AleksandraC';
 }
 
 .cont-link a {
@@ -159,6 +161,23 @@ a.etc-main:hover {
 .cont-text span {
     color: white;
 }
+
+/* ---routes-----*/
+
+.bg-container-routes{
+    background: url(../img/bg-banner1.png);
+    border-radius: 30px;
+}
+
+#container-routes {
+    padding: 0px;
+    margin: 0 auto;
+    color: burlywood;
+    max-width: 1200px;
+    min-height: 200px;
+    position: relative;
+}
+
 
 /*.cont-slider {*/
     /*margin-top:30px;*/
@@ -221,17 +240,7 @@ ul {
     /*margin: 0 auto;*/
 /*}*/
 
-/*#container {*/
-    /*padding: 0px;*/
-    /*margin: 0 auto;*/
-    /*color: burlywood;*/
-    /*max-width: 940px;*/
-    /*min-height: 200px;*/
-    /*background: url(../img/bg-banner1.png);*/
-    /*background-size: cover;*/
-    /*border-radius: 30px;*/
-    /*position: relative;*/
-/*}*/
+
 
 /*#container-form {*/
     /*padding: 0px;*/
@@ -350,12 +359,13 @@ footer {
     color: #ffffff;
     background-image: url(../img/footer_bg.png);
     background-size: 15px;
-    font-size: 0.8em;
+    font-size: 0.9em;
     text-align: center;
     height: 200px;
     margin-top: 30px;
     padding-top: 50px;
     overflow: hidden;
+    font-family: 'AleksandraC';
 }
 
 footer span {

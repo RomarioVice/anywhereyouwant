@@ -33,7 +33,7 @@ EOT;
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row hidden-xs">
                     <h1 class="font-h1">Последние новости</h1>
                     <div class="col-xs-12 bg">
                         <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0 col-lg-4">
