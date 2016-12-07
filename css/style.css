@@ -42,6 +42,7 @@ html, body {
     padding: 5px 0px 5px 0px;
     font-size: 13pt;
     color: #FFFFFF;
+    z-index: 4;
 }
 
 .main_pic {
@@ -66,11 +67,11 @@ html, body {
 }
 
 .news-main {
-    background-color: #deb887;
     height: 500px;
     margin: 15px 0px;
     color: #000000;
     font-family: 'AleksandraC';
+    background-color: #DEB887;
     border-radius: 25px;
 }
 
@@ -347,6 +348,7 @@ ul {
     z-index: 9998;
 }
 
+
 .header-center {
     /*margin-left: 230px;*/
     margin: 0 auto;
@@ -366,6 +368,10 @@ footer {
     padding-top: 50px;
     overflow: hidden;
     font-family: 'AleksandraC';
+}
+
+.z-ind {
+    z-index: 4;
 }
 
 footer span {
@@ -743,7 +749,6 @@ a.etc:hover {
         z-index: 9998;
     }
 
-
     i.logo {
         position: absolute;
         left: 25%;
@@ -791,7 +796,7 @@ a.etc:hover {
     }
 }
 
-@media screen and (min-width: 401px) and (max-width: 699px){
+@media screen and (min-width: 321px) and (max-width: 699px){
     .site-header {
         background-image: url(../img/header_bg.jpg);
         background-repeat: repeat-x;

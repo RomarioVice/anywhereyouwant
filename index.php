@@ -38,16 +38,20 @@ EOT;
                     <h1 class="font-h1">Последние новости</h1>
                     <div class="col-xs-12 bg">
                         <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0 col-lg-4">
+                            <div class="news-block-bg">
 
-                            <?php
-                                $i = 0;
-                                $result = R::GetAll('SELECT * FROM news ORDER BY nDate DESC');
-                                 foreach ($result as $row)  {
-                                    $i++;
-                                    if ($i==1) {
-                                        require 'blocks/echoForIndex.php';
-                                    }} ?>
+                                <?php
+                                    $i = 0;
+                                    $result = R::GetAll('SELECT * FROM news ORDER BY nDate DESC');
+                                    foreach ($result as $row)  {
+                                        $i++;
+                                        if ($i==1) {
+                                            require 'blocks/echoForIndex.php';
+                                        }
+                                    }
+                                ?>
 
+                            </div>
                         </div>
 
                         <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0 col-lg-4">
@@ -65,7 +69,6 @@ EOT;
 
 
                         <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
-
                             <?php
                             $i = 0;
                             $result = R::GetAll('SELECT * FROM news ORDER BY nDate DESC');

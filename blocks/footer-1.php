@@ -1,4 +1,5 @@
 <footer>
+    <div class="abstr">
         <div class="row">
             <div class="col-xs-6 col-xs-offset-1 col-lg-3 col-lg-offset-4" style="z-index: 2;">
                 <div class="row">
@@ -14,10 +15,15 @@
                 </div>
             </div>
 
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 z-ind">
                 <img src="img/Bus-Free-PNG-Image.png" style="width: auto; height: 200px; margin-left: 0%; margin-top: -50px;">
             </div>
+
+            <div class="col-xs-12">
+                <img src="img/abstracth-1.png" style="width: 2000px; height: 200px; margin-top: -220px;">
+            </div>
         </div>
+    </div>
 </footer>
 <!-- pushy -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
