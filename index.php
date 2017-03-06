@@ -2,7 +2,7 @@
     include('blocks/head.php');
 ?>
     <body>
-        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/1df78147c4a8f5f19867a1a0cd0ea3c1.gif">
             <?php
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
@@ -15,8 +15,8 @@
             <div class="container-fluid">
 
                 <div class="row">
-                    <div class="col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
-                        <h1 class="font-h1">О нас</h1>
+                    <div class="ns_bg col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                        <h1 class="font-h1">&nbsp;</h1>
                     </div>
                     <div class="col-xs-12 col-xs-offset-0 bg">
                         <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 main">
@@ -34,7 +34,9 @@ EOT;
                 </div>
 
                 <div class="row hidden-xs">
-                    <h1 class="font-h1">Последние новости</h1>
+                    <div class="ns_bg col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                        <h1 class="font-h1">&nbsp;</h1>
+                    </div>
                     <div class="col-xs-12 bg">
                         <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0 col-lg-4">
                             <div class="news-block-bg">
@@ -88,14 +90,25 @@ EOT;
                 </div>
 
                 <div class="row">
-                    <h1 class="font-h1">Контактные данные</h1>
+                    <div class="co_bg col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                        <h1 class="font-h1">&nbsp;</h1>
+                    </div>
                     <div class="col-xs-12 col-xs-offset-0 bg">
                         <div class="contacts">
-                            <p class="cont-text faa-parent animated-hover"><img src="img/viber1.png" class="faa-shake" style="weidth: 30px; height: 30px;">&nbsp <span>+38 (050) 565-44-50</span></p>
-                            <p class="cont-text faa-parent animated-hover"><i class="fa fa-phone-square fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span>+38 (063) 795-76-95</span></p>
-                            <p class="cont-text faa-parent animated-hover"><i class="fa fa-phone-square fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span>+38 (071) 301-65-08</span></p>
-                            <p class="cont-link faa-parent animated-hover"><i class="fa fa-vk fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span><a href="http://vk.com/perevozki_dnr_rossiya">vk.com/perevozki_dnr_rossiya</a></span></p>
-                            <p class="cont-link faa-parent animated-hover"><i class="fa fa-odnoklassniki fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span><a href="https://ok.ru/group52624225927358">ok.ru/group52624225927358</a></span></p>
+                            <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0 col-lg-4">
+                                <img src="img/cont1.svg" width="150" height="150">
+                                <p class="cont-text faa-parent animated-hover"><i class="fa fa-phone-square fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span>+38 (063) 795-76-95</span></p>
+                                <p class="cont-text faa-parent animated-hover"><i class="fa fa-phone-square fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span>+38 (071) 301-65-08</span></p>
+                            </div>
+                            <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0 col-lg-4">
+                                <img src="img/cont2.svg" width="150" height="150">
+                                <p class="cont-text faa-parent animated-hover"><img src="img/viber1.png" class="faa-shake" style="weidth: 30px; height: 30px;">&nbsp <span>+38 (050) 565-44-50</span></p>
+                            </div>
+                            <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0 col-lg-4">
+                                <img src="img/cont3.svg" width="150" height="150">
+                                <p class="cont-link faa-parent animated-hover"><i class="fa fa-vk fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span><a href="http://vk.com/perevozki_dnr_rossiya">vk.com/perevozki_dnr_rossiya</a></span></p>
+                                <p class="cont-link faa-parent animated-hover"><i class="fa fa-odnoklassniki fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span><a href="https://ok.ru/group52624225927358">ok.ru/group52624225927358</a></span></p>
+                            </div>
                         </div>
                     </div>
                 </div>

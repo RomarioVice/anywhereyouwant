@@ -475,6 +475,18 @@ h1, h2 {
     padding-top: 10px;
 }
 
+.au_bg {
+    background: url("../img/text_bg.svg") no-repeat center center;
+}
+
+.ns_bg {
+    background: url("../img/text_bg2.svg") no-repeat center center;
+}
+
+.co_bg {
+    background: url("../img/text_bg3.svg") no-repeat center center;
+}
+
 .font-h1 {
     /*padding-top: 30px;*/
     color: #080808;
