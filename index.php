@@ -6,7 +6,6 @@
             <?php
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
-                include('/blocks/slider.php');
                 include('/blocks/db.php');
             ?>
 

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/font-awesome-animation.min.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/hover-min.css" media="all">
+    <link rel="stylesheet" href="css/slider.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -35,4 +36,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+
 </head>
