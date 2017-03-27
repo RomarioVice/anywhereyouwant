@@ -153,7 +153,7 @@
         </div>
 
     <?php
-    include('blocks/footer.php');
+    include('blocks/footer-1.php');
     ?>
         <script>
             $(document).ready(function(){

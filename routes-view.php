@@ -16,12 +16,15 @@ include('blocks/head.php');
             <?php
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
-                include('/blocks/slider.php');
             ?>
             <div class="wrapper">
                 <div class="bg-container">
-                    <h1 class="font-h1">Подробности о маршруте</h1>
-                    <!-- Your Content -->
+                    <div class="row">
+                    <div style="clear:both;height:15px;width:100%"></div>
+                        <div class="ro_desc col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                            <h1 class="font-h1">&nbsp;</h1>
+                        </div>
+                    </div>
                     <div id="container-r-v">
                         <p class="view-text"><span class="desc">Маршрут</span></p>
                         <div class="left-right">
@@ -47,7 +50,7 @@ include('blocks/head.php');
                 </div>
             </div>
             <?php
-                include('/blocks/footer.php');
+                include('/blocks/footer-1.php');
             ?>
         </div>
     </body>

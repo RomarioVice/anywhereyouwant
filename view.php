@@ -22,15 +22,16 @@ $myrow = mysql_fetch_array($result);
     <meta property="og:url" content="http://www.site.com"/>
     <meta property="og:site_name" content="Название сайта"/>
     <meta property="og:see_also" content="http://www.website.com"/>
-    <meta property="fb:admins" content="Facebook_ID"/>
+    <meta property="fb:admins" content="Facebook_ID"/
 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pushy.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/slicebox.css">
+    <link rel="stylesheet" href="css/font-awesome-animation.min.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/hover-min.css" media="all">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -57,8 +58,6 @@ $myrow = mysql_fetch_array($result);
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/parallax.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
-    <script type="text/javascript" src="js/jquery.slicebox.js"></script>
     <script type="text/javascript" src="https://vk.com/js/api/share.js?94" charset="windows-1251"></script>
 
 </head>
@@ -67,8 +66,6 @@ $myrow = mysql_fetch_array($result);
             <?php
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
-
-                include('/blocks/slider.php');
             ?>
             <div class="wrapper">
                 <div class="bg-container">
@@ -95,7 +92,7 @@ $myrow = mysql_fetch_array($result);
                                             if (!this.executed) {
                                                 this.executed = true;
                                                 setTimeout(function () {
-                                                    OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
+                                                    OK.CONNECT.insertShareWidget(id, did, st, title, description, image);
                                                 }, 0);
                                             }
                                         }};
@@ -108,7 +105,7 @@ $myrow = mysql_fetch_array($result);
                 </div>
             </div>
             <?php
-                include('/blocks/footer.php');
+                include('blocks/footer-1.php');
             ?>
         </div>
     </body>

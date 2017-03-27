@@ -8,12 +8,16 @@
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
                 include('/blocks/connect.php');
-                include('/blocks/slider.php');
             ?>
 
         <div class="wrapper">
             <div class="bg-container">
-                <h1 class="font-h1">Новости</h1>
+                <div class="row">
+                <div style="clear:both;height:15px;width:100%"></div>
+                    <div class="news_bg col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                        <h1 class="font-h1">&nbsp;</h1>
+                    </div>
+                </div>
                 <!-- Your Content -->
                 <?php
                 function yandex_link_bar($page, $count, $pages_count, $show_link)
@@ -87,12 +91,14 @@
                 while ($row = mysql_fetch_array($result)) {
                     echo <<<EOT
                             <div id="container">
+                                <div id="container-view">
                                     <div class="news">
                                         <p class="news-title">$row[title]</p>
                                         <img class="news-pic" src="$row[pic]">
                                         <p class="news-text">$row[text]... <a class='etc' href='view.php?type=news&id=$row[id]'>Подробнее</a></p>
                                         <p class="publication-date">Дата публикации: $row[nDate]</p>
                                         <p>&nbsp;</p>
+                                    </div>
                                 </div>
                             </div>
 EOT;
@@ -111,7 +117,7 @@ EOT;
             </div>
         </div>
         <?php
-            include('blocks/footer.php');
+            include('blocks/footer-1.php');
         ?>
     </div>
     </body>
