@@ -33,11 +33,10 @@
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-<!--    <link rel="stylesheet" href="css/bootstrap.css">-->
-
     <!-- js -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/parallax.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
     <script type="text/javascript" src="js/jquery.slicebox.js"></script>

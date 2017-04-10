@@ -7,49 +7,22 @@
     padding: 0;
 }
 
-@font-face{
-    font-family: 'CCZoinks';
-    src: url('../fonts/CCZoinks/CCZoinks.eot');
-    src: url('../fonts/CCZoinks/CCZoinks.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/CCZoinks/CCZoinks.woff') format('woff'),
-    url('../fonts/CCZoinks/CCZoinks.ttf') format('truetype'),
-    url('../fonts/CCZoinks/CCZoinks.svg#webfont') format('svg');
-}
-
 html, body {
     min-width: 520px;
-    height: 100%;
     font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
     -webkit-tap-highlight-color: transparent;
-    overflow-x: auto;
+    overflow-x: hidden;
     min-width: 300px;
 }
 
-.cont-slider {
-    margin-top:30px;
-    width: 100%;
-}
-
-.slider-show {
-    border-radius: 30px;
-    background: url(../img/bg-banner1.png);
-    background-size: cover;
-    position: relative;
-    max-width: 940px;
-    width: 96%;
-    margin: 0 auto;
-    padding: 2% 10% 2% 10%;
-    z-index: 1;
-}
-
 .parallax-window {
-    position: absolute;
     top: 0;
     height: 100%;
     width: 100%;
 }
 
 .wrapper {
+    height: 100%;
 }
 
 .spin {
@@ -296,17 +269,18 @@ ul {
 footer {
     color: #ffffff;
     background-image: url(../img/footer_bg.png);
-    background-size: 5px;
-    font-size: 0.8em;
+    background-size: 15px;
+    font-size: 0.9em;
     text-align: center;
-    height: 57px;
-    margin-top: 10px;
+    height: 200px;
+    margin-top: 30px;
+    padding-top: 50px;
     overflow: hidden;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    font-family: "Trebuchet MS";
+}
 
+.z-ind {
+    z-index: 4;
 }
 
 footer span {

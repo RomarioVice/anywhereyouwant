@@ -5,7 +5,6 @@
         <li class="pushy-link"><a class="faa-parent animated-hover" href="routes.php?page=1"><i class="fa fa-random fa-2x faa-pulse faa-fast" aria-hidden="true"></i> <strong>Маршруты</strong></a></li>
         <li class="pushy-link"><a class="faa-parent animated-hover" href="news.php?page=1"><i class="fa fa-newspaper-o fa-2x faa-pulse faa-fast" aria-hidden="true"></i> <strong>Новости</strong></a></li>
         <li class="pushy-link"><a class="faa-parent animated-hover" href="form.php?type=orders"><i class="fa fa-file-text fa-2x faa-pulse faa-fast" aria-hidden="true"></i> <strong>Подать заявку</strong></a></li>
-        <li class="pushy-link"><a href="signupU.php"><strong>Регистрация</strong></a>></li>
         <li class="pushy-link">&nbsp;</li>
         <li class="pushy-link">&nbsp;</li>
         <li class="pushy-link">&nbsp;</li>

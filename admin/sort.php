@@ -86,7 +86,7 @@ $data = $_POST['sort'];
 if( isset($data) ) {
     require "connect1.php";
     $num = 0;
-    $result = mysql_query("SELECT *, DATE_FORMAT(date_ord,'%H:%i %d/%m/%Y') as eurodate FROM orders WHERE date_t_ord = '$data'");
+    $result = mysql_query("SELECT *, DATE_FORMAT(date_ord,'%H:%i %d/%m/%Y') as eurodate FROM orders WHERE date_t_ord LIKE '%$data%' OR surname_ord LIKE '%$data%' OR name_ord LIKE '%$data%' OR otc_ord LIKE '%$data%' OR destination_ord LIKE '%$data%' OR phone_ord LIKE '%$data%'");
     while ($myrow = mysql_fetch_array($result)) { //выводим обработанные строки на экран
         $num++;
         echo "<tr>";

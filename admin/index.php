@@ -44,6 +44,7 @@
     <!-- js -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/parallax.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
     <script type="text/javascript" src="js/jquery.slicebox.js"></script>
@@ -73,13 +74,13 @@
                         <form id="sort_f" action="sort.php" method="POST">
                             <input class="date-mask" type="text" name="sort" placeholder="Поиск по дате отправки"/>
                             <input class="delbut1" type="submit" name="do_sort" value="Поиск"/>
-                            <script type="text/javascript">
-                                $.jMaskGlobals = {translation: {
-                                    'x': {pattern: /\d/},
-                                }
-                                };
-                                $('.date-mask').mask('xx.xx.xx');
-                            </script>
+                           <!--  <script type="text/javascript">
+                               $.jMaskGlobals = {translation: {
+                                   'x': {pattern: /\d/},
+                               }
+                               };
+                               $('.date-mask').mask('xx.xx.xx');
+                           </script> -->
                         </form>
                     </div>
                     <br>
@@ -127,7 +128,7 @@ EOT;
             </div>
         </div>
         <?php
-        include('blocks/footer.php');
+        include('blocks/footer-1.php');
         ?>
     </div>
 <?php else : header('Location: login.php');?>

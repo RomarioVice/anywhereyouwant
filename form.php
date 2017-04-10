@@ -7,14 +7,19 @@
 ?>
 
 <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/1df78147c4a8f5f19867a1a0cd0ea3c1.gif">
         <?php
             include('/blocks/site-header.php');
             include('/blocks/menu.php');
         ?>
         <div class="wrapper">
+            <div class="row">
+                <div style="clear:both;height:15px;width:100%"></div>
+                    <div class="or_bg col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                    <h1 class="font-h1">&nbsp;</h1>
+                </div>
+            </div>
             <div class="bg-container-form">
-            <h1 class="font-h1">Бронирование посадочных мест</h1>
             <!-- Your Content -->
             <div id="container-form">
 
@@ -142,8 +147,8 @@
                                 </select>
                             </li>
                             <li class="buttons">
-                                <button class="reset" type="reset" name="reset"/>Очистить</button>
                                 <button class="submit" type="submit" name="do_order">Отправить</button>
+                                <button class="reset" type="reset" name="reset"/>Очистить</button>
                             </li>
                         </ul>
                     </form>

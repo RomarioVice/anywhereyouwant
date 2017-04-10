@@ -7,28 +7,8 @@
     padding: 0;
 }
 
-@font-face{
-    font-family: 'CCZoinks';
-    src: url('../fonts/CCZoinks/CCZoinks.eot');
-    src: url('../fonts/CCZoinks/CCZoinks.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/CCZoinks/CCZoinks.woff') format('woff'),
-    url('../fonts/CCZoinks/CCZoinks.ttf') format('truetype'),
-    url('../fonts/CCZoinks/CCZoinks.svg#webfont') format('svg');
-}
-
-@font-face {
-    font-family: 'AleksandraC';
-    src: local('AleksandraCRegular'),
-    url('../fonts/aleksandracregular.woff2') format('woff2'),
-    url('../fonts/aleksandracregular.woff') format('woff'),
-    url('../fonts/aleksandracregular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-
 html, body {
-    font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    font: 14px "Trebuchet MS", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
     min-width: 320px;
@@ -36,7 +16,7 @@ html, body {
 
     /*----index.php------*/
 .main {
-    font-family: 'AleksandraC';
+    font-family: "Trebuchet MS";
     text-indent: 30px;
     text-align: justify;
     padding: 5px 0px 5px 0px;
@@ -70,7 +50,7 @@ html, body {
     height: 500px;
     margin: 15px 0px;
     color: #000000;
-    font-family: 'AleksandraC';
+    font-family: "Trebuchet MS";
     background-color: #DEB887;
     border-radius: 25px;
 }
@@ -98,7 +78,7 @@ html, body {
 }
 
 a.etc-main {
-    font-family: 'AleksandraC';
+    font-family: "Trebuchet MS";
     text-indent: 0px;
     position: absolute;
     right: 22px;
@@ -108,14 +88,12 @@ a.etc-main {
     text-transform: uppercase;
     padding: 3px 3px;
     font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
     -webkit-transition: 0.4s ease-in-out;
     -o-transition: 0.4s ease-in-out;
     transition: 0.4s ease-in-out;
     color: #8a2be2;
     border-radius: 25px;
     border: 3px solid #8a2be2;
-    font-family: 'AleksandraC';
 }
 
 a.etc-main:hover {
@@ -125,7 +103,7 @@ a.etc-main:hover {
 }
 
 .segue {
-    font-family: 'AleksandraC';
+    font-family: "Trebuchet MS";
     position: absolute;
     bottom: 15px;
     right: 15px;
@@ -146,7 +124,7 @@ a.etc-main:hover {
     padding-top: 30px;
     text-align: center;
     color: #DEB887;
-    font-family: 'AleksandraC';
+    font-family: "Trebuchet MS";
 }
 
 .cont-link a {
@@ -197,8 +175,6 @@ a.etc-main:hover {
     z-index: 1;
 }
 
-.parallax-window {
-}
 
 .wrapper {
     height: 100%;
@@ -236,7 +212,6 @@ ul {
 }
 /**/
 .bg-container-form {
-    !*background-image: url(../img/opacity72.png);*!
     max-width: 600px;
     margin: 0 auto;
 }
@@ -367,7 +342,7 @@ footer {
     margin-top: 30px;
     padding-top: 50px;
     overflow: hidden;
-    font-family: 'AleksandraC';
+    font-family: "Trebuchet MS";
 }
 
 .z-ind {
@@ -499,10 +474,14 @@ h1, h2 {
     background: url("../img/route_desc.svg") no-repeat center center;
 }
 
+.or_bg {
+    background: url("../img/order_bg_text.svg") no-repeat center center;
+}
+
 .font-h1 {
     /*padding-top: 30px;*/
     color: #080808;
-    font-family: CCZoinks;
+    font-family: "Trebuchet MS";
     font-size: 56pt;
 }
 
@@ -535,7 +514,7 @@ a.etc {
     text-transform: uppercase;
     padding: 3px 3px;
     font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     -webkit-transition: 0.4s ease-in-out;
     -o-transition: 0.4s ease-in-out;
     transition: 0.4s ease-in-out;
@@ -722,7 +701,7 @@ a.etc:hover {
 .form h1{
     padding:0;
     margin:0px 0px 10px 0px;
-    font-family: Trebuchet MS;
+    font-family: "Trebuchet MS";
     font-size:1.3em;
     font-weight:normal;
 }
@@ -737,6 +716,12 @@ a.etc:hover {
 
 .form table span{
     color:red;
+}
+
+.buttons {
+    margin: auto;
+    height: 30px;
+    width: 400px;
 }
 
 .send {
