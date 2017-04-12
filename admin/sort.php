@@ -62,10 +62,10 @@ require "connect.php";
     <h1 class="font-h1"><a name="about">Администраторская панель</a></h1>
     <!-- Your Content -->
     <div id="container">
-        <div>
+        <div id = "center-plz">
             <form id="sort_f" action="sort.php" method="POST">
-                <input type="text" name="sort" placeholder="Поиск по дате"/>
-                <input class="delbut1" type="submit" name="do_sort" value="Поиск" />
+                <input type="date-mask" name="sort" placeholder="Введите запрос"/>
+                <input class="delbut1" type="submit" name="do_sort" value="Поиск"/>
             </form>
             <br>
         </div>
@@ -111,13 +111,15 @@ EOT;
     </table>
         <div class="delbut">
             <input class="delbut1" type="submit" name="del" value="Удалить отмеченный элемент"/>
+
         </div>
+
     </form>
     </div>
     </div>
     </div>
 <?php
-include('blocks/footer.php');
+include('blocks/footer-1.php');
 ?>
 </div>
 <?php else : header('Location: login.php');?>

@@ -12,7 +12,6 @@ html, body {
     font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
-    min-width: 300px;
 }
 
 .parallax-window {
@@ -89,6 +88,19 @@ ul {
     min-width: 520px;
     min-height: 400px;
     background: url(../img/bg-banner1.png);
+    background-size: cover;
+    border-radius: 30px;
+    position: relative;
+}
+
+#container_no_bg{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    color: burlywood;
+    max-width: 940px;
+    min-width: 520px;
+    min-height: 400px;
     background-size: cover;
     border-radius: 30px;
     position: relative;
@@ -212,6 +224,7 @@ ul {
 .delbut1 {
     background: #e30020;
     padding: 7px 30px;
+    margin-left: 10px;
     font-size: 13px;
     font-weight: bold;
     color: #FFFFFF;

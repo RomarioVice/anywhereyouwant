@@ -27,11 +27,11 @@
             $errors[] = 'Введите пункт отправки!';
         }
 
-        if (trim($data['phone_ord'] == '')) {
+        if (trim($data['destination_ord'] == '')) {
             $errors[] = 'Введите пункт назначения!';
         }
 
-        if (trim($data['phone_ord'] == '')) {
+        if (trim($data['date_t_ord'] == '')) {
             $errors[] = 'Введите дату поездки!';
         }
 

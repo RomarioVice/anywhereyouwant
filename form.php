@@ -28,7 +28,7 @@
                             <?php
                             if( isset($data['do_order']) ) {
                                 if (empty($errors)) {
-                                    echo '<div class="success"">Заказ отправлен!</div>';
+                                    echo '<div class="success">Заказ отправлен!</div>';
                                 } else {
                                     echo '<div class="canceled">' . array_shift($errors) . '</div>';
                                 }

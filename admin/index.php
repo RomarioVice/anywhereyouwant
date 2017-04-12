@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/slicebox.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -72,7 +73,7 @@
                 <div id="container">
                     <div id = "center-plz">
                         <form id="sort_f" action="sort.php" method="POST">
-                            <input class="date-mask" type="text" name="sort" placeholder="Поиск по дате отправки"/>
+                            <input class="date-mask" type="text" name="sort" placeholder="Введите запрос"/>
                             <input class="delbut1" type="submit" name="do_sort" value="Поиск"/>
                            <!--  <script type="text/javascript">
                                $.jMaskGlobals = {translation: {

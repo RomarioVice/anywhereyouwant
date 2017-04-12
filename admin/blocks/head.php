@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Увезём - куда захочешь!</title>
+    <title>Администраторская панель - Увезём - куда захочешь!</title>
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="css/pushy.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/slicebox.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -37,15 +38,10 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/parallax.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/checkForm.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
-    <script type="text/javascript" src="js/jquery.slicebox.js"></script>
     <script type="text/javascript" src="https://vk.com/js/api/share.js?94" charset="windows-1251"></script>
-
-    <script>
-    setInterval(function(){
-    $("#orders").load("index.php #orders");
-    }, 10000);
-    </script>
+    <script type="text/javascript" src="../js/jquery.mask.js"></script>
 
 </head>

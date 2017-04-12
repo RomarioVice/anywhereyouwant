@@ -1,6 +1,6 @@
 $(function() {
 
-    var field = new Array("surname_ord", "name_ord", "places_ord", "phone_ord", "destination_ord", "departure_ord");
+    var field = new Array("departure", "destination", "cost", "g_map", "description");
 
     $("form").submit(function(){ // обрабатываем отправку формы
         var error = 0; // индекс ошибки
@@ -13,7 +13,7 @@ $(function() {
                         error=1; //определяем индекс ошибки
                     }
                     else{
-                        $(this).css('border', 'gray 1px solid');//в ином случае устанавливаем раску серого цвета
+                        $(this).css('border', 'gray 1px solid');//в ином случае устанавливаем рамку серого цвета
                     }
                 }
 
