@@ -97,8 +97,9 @@
                             $result = R::getAll('SELECT * FROM services ORDER BY destination ASC LIMIT '.$start_pos.', '.$perpage) or die('error!');
                             foreach ($result as $row) {
                                 echo <<<EOT
-                                    <a href="route_update.php?id=$row[id_route]" class="info">
                                         <div class="routes-table-bg">
+                                            <a href="routes-view.php?type=services&id=$row[id_route]"><img class="watch_route_button" src="img/ic.svg"/></a>
+                                            <a href="delete_done.php?id=$row[id_route]"><img class="delete_route_button" src="img/delete.svg" onClick="document.location.reload(true)"/></a>
                                             <table id="routes">
                                                 <tr>
                                                     <td class="dd">$row[departure] <i class="fa fa-exchange" aria-hidden="true"></i> $row[destination]</td>
@@ -108,7 +109,6 @@
                                                 </tr>
                                             </table>
                                         </div>
-                                    </a>
                               
 EOT;
                             }

@@ -384,16 +384,59 @@ h1, h2 {
 }
 
 .routes-table-bg {
+    position: relative;
     margin-bottom: 20px;
     display: inline-flex;
     background: url(../img/bg_route.png);
     width: 250px;
     height: 127px;
-    opacity:.75;
+    opacity:.75;*
 }
 
 .routes-table-bg:hover {
     opacity:1;
+}
+
+.routes-table-bg:hover .delete_route_button {
+    opacity: 1;
+}
+
+.routes-table-bg:hover .edit_route_button {
+    opacity: 1;
+}
+
+.routes-table-bg:hover .watch_route_button {
+    opacity: 1;
+}
+
+.delete_route_button {
+    height: 50px; 
+    width: : 50px;
+    z-index: 1;
+    position: absolute;
+    top: -45px;
+    left: 205px;
+    opacity: 0;
+}
+
+.edit_route_button {
+    height: 50px; 
+    width: : 50px;
+    z-index: 1;
+    position: absolute;
+    top: -45px;
+    left: 170px;
+    opacity: 0;
+}
+
+.watch_route_button {
+    height: 50px; 
+    width: : 50px;
+    z-index: 1;
+    position: absolute;
+    top: -45px;
+    left: 135px;
+    opacity: 0;
 }
 
 #routes {
