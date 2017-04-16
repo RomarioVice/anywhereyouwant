@@ -22,7 +22,7 @@ $myrow = mysql_fetch_array($result);
     <meta property="og:url" content="http://www.site.com"/>
     <meta property="og:site_name" content="Название сайта"/>
     <meta property="og:see_also" content="http://www.website.com"/>
-    <meta property="fb:admins" content="Facebook_ID"/
+    <meta property="fb:admins" content="Facebook_ID"/>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
@@ -32,6 +32,7 @@ $myrow = mysql_fetch_array($result);
     <link rel="stylesheet" href="css/font-awesome-animation.min.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/hover-min.css" media="all">
+
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -59,6 +60,7 @@ $myrow = mysql_fetch_array($result);
     <script type="text/javascript" src="js/parallax.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="https://vk.com/js/api/share.js?94" charset="windows-1251"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 </head>
     <body>

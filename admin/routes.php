@@ -8,7 +8,7 @@
     require "blocks/head.php";
     ?>
     <body>
-        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
             <?php
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
@@ -79,7 +79,7 @@
                             } // Конец функции
 
                             // Подготовка к постраничному выводу
-                            $perpage = 12; // Количество отображаемых данных из БД
+                            $perpage = 30; // Количество отображаемых данных из БД
                             if (empty($_GET['page']) || ($_GET['page'] <= 0)) {
                                 $page = 1;
                             } else {
@@ -98,8 +98,9 @@
                             foreach ($result as $row) {
                                 echo <<<EOT
                                         <div class="routes-table-bg">
-                                            <a href="routes-view.php?type=services&id=$row[id_route]"><img class="watch_route_button" src="img/ic.svg"/></a>
-                                            <a href="delete_done.php?id=$row[id_route]"><img class="delete_route_button" src="img/delete.svg" onClick="document.location.reload(true)"/></a>
+                                            <a href="routes-view.php?type=services&id=$row[id_route]"><img class="watch_route_button" src="img/ic.svg" title="Просмотр"/></a>
+                                            <a href="route_update.php?id=$row[id_route]"><img class="edit_route_button" src="img/edit.svg" title="Редактировать"/></a>
+                                            <a href="delete_done.php?id=$row[id_route]"><img class="delete_route_button" src="img/delete.svg" onClick="document.location.reload(true)" title="Удалить"/></a>
                                             <table id="routes">
                                                 <tr>
                                                     <td class="dd">$row[departure] <i class="fa fa-exchange" aria-hidden="true"></i> $row[destination]</td>
@@ -124,13 +125,15 @@ EOT;
                     // Вызов функции, для вывода ссылок на экран
                     yandex_link_bar($page, $count, $pages_count, 10);
                     ?>
+
                 </div>
             </div>
+            <br>
             <?php
                 include('blocks/footer-1.php');
             ?>
-    </div>
     <?php else : header('Location: login.php');?>
     <?php endif; ?>
+    </div>
     </body>
 </html>

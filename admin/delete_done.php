@@ -53,7 +53,7 @@
 
 </head>
     <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
         <?php
         include('blocks/site-header.php');
         include('blocks/menu.php');
@@ -63,7 +63,7 @@
 
             <?php
                 $result = mysql_query("DELETE FROM services WHERE id_route = '$_GET[id]'");
-            
+               echo '<meta http-equiv="Refresh" content="0; URL=routes.php">';
 
             ?>
 

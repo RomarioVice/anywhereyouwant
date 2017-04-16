@@ -23,6 +23,7 @@ html, body {
     font-size: 13pt;
     color: #FFFFFF;
     z-index: 4;
+    margin-bottom: 60px;
 }
 
 .main_pic {
@@ -36,14 +37,42 @@ html, body {
 
 .main_pic {
     text-indent: 0px;
-    margin-left: -35px;
+    /*margin-left: -35px;*/
 }
 
 .bg {
-    background: url(../img/bg-banner1.png);
+    background-color: PapayaWhip;
+    /*background: url(../img/bg-banner1.png);*/
     background-size: cover;
     border-radius: 30px;
     padding-bottom: 30px;
+}
+
+.bg_cont_1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 70%;
+    margin: 0 auto;
+    background-image: url(../img/bg_cont1.png);
+    background-size: cover;
+}
+
+.bg_cont_2 {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    width: 70%;
+    margin: 0 auto;
+    background-image: url(../img/bg_cont2.png);
+    background-size: cover;
+}
+
+.bg_cont_3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 70%;
+    margin: 0 auto;
+    background-image: url(../img/bg_cont3.png);
+    background-size: cover;
 }
 
 .news-main {
@@ -102,11 +131,36 @@ a.etc-main:hover {
     box-shadow: -1px 3px 19px 1px #000000;
 }
 
+a.etc-main2 {
+    font-family: "Trebuchet MS";
+    text-indent: 0px;
+    position: absolute;
+    right: 5px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 3px 3px;
+    font-size: 12px;
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    color: #FFCD2A;
+    border-radius: 25px;
+    border: 3px solid #FFCD2A;
+}
+
+a.etc-main2:hover {
+    color: #8a2be2;
+    background: #FFCD2A;
+    box-shadow: -1px 3px 19px 1px #000000;
+}
+
 .segue {
     font-family: "Trebuchet MS";
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    right: 10px;
+    top: 0px;
+
 }
 
 .segue-a {
@@ -144,7 +198,7 @@ a.etc-main:hover {
 /* ---routes-----*/
 
 .bg-container-routes{
-    background: url(../img/bg-banner1.png);
+    /*background: url(../img/bg-banner1.png);*/
     border-radius: 30px;
 }
 
@@ -161,6 +215,12 @@ a.etc-main:hover {
 .cont-slider {
     margin-top:30px;
     width: 100%;
+}
+
+
+.ok_shareWidget {
+    position: absolute;
+    bottom: 0px;
 }
 
 .slider-show {

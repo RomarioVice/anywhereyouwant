@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="css/pushy.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/slicebox.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Favicon -->
@@ -60,7 +59,7 @@
 
 </head>
     <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
         <?php
         include('blocks/site-header.php');
         include('blocks/menu.php');
@@ -128,6 +127,7 @@ EOT;
                 </div>
             </div>
         </div>
+        <div style="height:50px;width:100%"></div>
         <?php
         include('blocks/footer-1.php');
         ?>

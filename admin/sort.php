@@ -18,7 +18,7 @@ require "connect.php";
     <link rel="stylesheet" href="css/pushy.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/slicebox.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -51,7 +51,7 @@ require "connect.php";
 
 </head>
     <body>
-<div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+<div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
     <?php
     include('blocks/site-header.php');
     include('blocks/menu.php');
@@ -86,7 +86,7 @@ $data = $_POST['sort'];
 if( isset($data) ) {
     require "connect1.php";
     $num = 0;
-    $result = mysql_query("SELECT *, DATE_FORMAT(date_ord,'%H:%i %d/%m/%Y') as eurodate FROM orders WHERE date_t_ord LIKE '%$data%' OR surname_ord LIKE '%$data%' OR name_ord LIKE '%$data%' OR otc_ord LIKE '%$data%' OR destination_ord LIKE '%$data%' OR phone_ord LIKE '%$data%'");
+    $result = mysql_query("SELECT *, DATE_FORMAT(date_ord,'%H:%i %d/%m/%Y') as eurodate FROM orders WHERE date_t_ord LIKE '%$data%' OR surname_ord LIKE '%$data%' OR name_ord LIKE '%$data%' OR otc_ord LIKE '%$data%' OR destination_ord LIKE '%$data%' OR phone_ord LIKE '%$data%' ORDER BY date_ord DESC");
     while ($myrow = mysql_fetch_array($result)) { //выводим обработанные строки на экран
         $num++;
         echo "<tr>";
@@ -118,6 +118,7 @@ EOT;
     </div>
     </div>
     </div>
+    <div style="height:50px;width:100%"></div>
 <?php
 include('blocks/footer-1.php');
 ?>
