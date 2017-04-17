@@ -49,27 +49,24 @@ EOT;
 
                         <div style="clear:both;height:50px;width:100%"></div>
                         
-                        <div class="content mCustomScrollbar">
+                        <div id="content-rds" class="content mCustomScrollbar">
                         <div style="height:20px;"></div>
                         <div class="segue">
                             <a class="segue-a faa-parent animated-hover" href="news.php?page=1">Перейти к блоку новостей <i class="fa fa-arrow-right faa-horizontal" aria-hidden="true"></i></a>
                         </div>
                         <?php
-                                            $i = 0;
-                                            $result = R::GetAll("SELECT id, DATE_FORMAT(nDate, '%d.%m.%Y') as formated_date, title FROM news ORDER BY nDate DESC");
-                                            foreach ($result as $row)  {    
-                                                        echo <<<EOT
-                                        
-                                                                <p><span class="date_format">$row[formated_date]</span> 
-                                                                <br>
-                                                                <a class='etc-main2' href='view.php?type=news&id=$row[id]'>Подробнее</a>
-                                                                <br>
-                                                                <span class="title">$row[title]</span></p>
-                                                                <hr />
+                            $i = 0;
+                            $result = R::GetAll("SELECT id, DATE_FORMAT(nDate, '%d.%m.%Y') as formated_date, title FROM news ORDER BY nDate DESC");
+                                foreach ($result as $row)  {    
+                                    echo <<<EOT
+                                        <p><span class="date_format">$row[formated_date]</span> 
+                                        <br>
+                                        <a class='etc-main2' href='view.php?type=news&id=$row[id]'>Подробнее</a>
+                                        <br>
+                                        <span class="title">$row[title]</span></p>                                     
 EOT;
-                                                                }
+                                }
                         ?>
-
                        
                         </div>
                     </div>

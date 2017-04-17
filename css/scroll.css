@@ -20,11 +20,13 @@ hr{
 	margin-right: 40px;
 	line-height: 24px;
 	color: #FFE385;
+	text-shadow: 1.3px 1.2px 2px black;
 }
 
 .date_format {
 	color: #FFCD2A;
 	font-size: 10px;
+	text-shadow: 1.3px 1.2px 2px black;
 }
 
 .title{ margin-top: 5px; }

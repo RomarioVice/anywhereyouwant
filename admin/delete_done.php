@@ -13,6 +13,7 @@
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pushy.css">
@@ -66,7 +67,12 @@
                echo '<meta http-equiv="Refresh" content="0; URL=routes.php">';
 
             ?>
-
+            <div style="clear:both;height:100px;width:100%"></div>
+        <div class="row">
+            <div class="del_done col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                <h1 class="font-h1">&nbsp;</h1>
+            </div>
+        </div>
         </div>
         <?php
         include('blocks/footer-1.php');

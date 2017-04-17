@@ -15,12 +15,6 @@
                 include('/blocks/connect.php');
             ?>
             <div class="wrapper">
-                <div class="row">
-                <div style="clear:both;height:15px;width:100%"></div>
-                    <div class="ro_bg col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
-                        <h1 class="font-h1">&nbsp;</h1>
-                    </div>
-                </div>
                 <div class="bg-container-routes">
                     <!-- Your Content -->
                     <div id="container-routes">

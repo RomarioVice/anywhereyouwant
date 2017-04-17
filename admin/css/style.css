@@ -49,6 +49,13 @@ ul {
   padding: 0;
 }
 
+.add_done {
+    background: url(../img/add_route.svg) no-repeat center center;
+}
+
+.del_done {
+    background: url(../img/del_route.svg) no-repeat center center;
+}
 
 .orders {
     background-color: #666666;

@@ -55,6 +55,7 @@ html, body {
     margin: 0 auto;
     background-image: url(../img/bg_cont1.png);
     background-size: cover;
+    border-radius: 10px;
 }
 
 .bg_cont_2 {
@@ -64,6 +65,7 @@ html, body {
     margin: 0 auto;
     background-image: url(../img/bg_cont2.png);
     background-size: cover;
+    border-radius: 10px;
 }
 
 .bg_cont_3 {
@@ -73,6 +75,7 @@ html, body {
     margin: 0 auto;
     background-image: url(../img/bg_cont3.png);
     background-size: cover;
+    border-radius: 10px;
 }
 
 .news-main {
@@ -167,6 +170,7 @@ a.etc-main2:hover {
     text-decoration: none;
     color: #DEB887;
     text-transform: uppercase;
+    text-shadow: 1px 1px black;
 }
 
 .segue-a:hover {
@@ -550,18 +554,39 @@ h1, h2 {
     margin: 0px 20px 0px 20px;
 }
 
+.news-img{
+    height: 170px;
+    width: auto;
+}
+
 .news-title {
-    color: #ffffff;
-    font-size: 16pt;
-    display: block;
-    text-align: center;
-    padding-top: 30px;
+    color: #FFE385;
+    font-size: 20pt;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 6px #000000;
+}
+
+.news-block {
+    background-image: url(../img/news_bg.png);
+    background-size: cover;
+    border-radius: 7px;
+}
+
+.news-block:hover {
+    background-image: url(../img/news_bg_hover.png);
+    background-size: cover;
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
 }
 
 .news-text {
-     text-indent: 30px;
-     text-align: justify;
-     padding-bottom: 20px;
+    color: white;
+    font-size: 14px;
+    text-indent: 30px;
+    text-align: justify;
+    padding: 4px;
+    text-shadow: 1px 1px 2px #000000;
  }
 
 a.etc {
@@ -589,12 +614,18 @@ a.etc:hover {
 }
 
 .publication-date{
-    color: #ffffff;
+    color: #8238A9;
     position: absolute;
-    bottom: 0px;
-    left: 30px;
+    top: -5px;
+    right: 0px;
     text-align: right;
     font-size: 9pt;
+    background-color: #F0FF71;
+    padding: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .75);
+    -moz-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .75);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .75);
 }
 
 .view-title {
@@ -606,8 +637,10 @@ a.etc:hover {
 
 .view-text {
     text-indent: 20px;
-    padding: 0px 15px 0px 15px;
+    padding: 20px 15px 0px 15px;
     text-align: justify;
+    margin: 0 auto;
+    max-width: 700px
 }
 
 .view-date {
@@ -616,7 +649,7 @@ a.etc:hover {
     font-size: 9pt;
 }
 
-.view-pic, .news-pic {
+.view-pic {
     display: block;
     max-width:100%;
     height:auto;
@@ -796,6 +829,9 @@ a.etc:hover {
     align-items: center;
 }
 
+.social-row {
+    height: 30px;
+}
 
 #sub, #res {
     margin-left: 10px;

@@ -36,10 +36,11 @@
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <script>
+    $("#content-rds").mCustomScrollbar({theme:"rounded-dots"});
         (function($){
             $(window).on("load",function(){
                 
-                $("#content-1").mCustomScrollbar({
+                $("#content").mCustomScrollbar({
                     theme:"minimal"
                 });
                 

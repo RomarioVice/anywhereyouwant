@@ -23,6 +23,7 @@ html, body {
 	width: 100%; 
 	height: 100%; 
 	resize: none;
+	color: black;
 }
 
 /* === Canvas === */
@@ -69,7 +70,7 @@ html, body {
 	display: inline;
 }
 .required_notification {
-	color: burlywood;
+	color: black;
 	margin:5px 0 0 0; 
 	display:inline;
 }
@@ -86,6 +87,7 @@ html, body {
 	height:30px;
 	width:220px;
 	padding:5px 8px;
+	color: black;
 }
 
 .add_form select{
@@ -100,7 +102,7 @@ html, body {
 }
 
 .t_login {
-	color: burlywood;
+	color: black;
 }
 
 	/* form element visual styles */
@@ -113,6 +115,7 @@ html, body {
 		-webkit-transition: padding .25s;
 		-o-transition: padding .25s;
 		transition: padding .25s;
+		color: black;
 	}
 	.add_form input:focus, .add_form select:focus {
 		background: #fff;

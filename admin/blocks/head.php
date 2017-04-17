@@ -7,6 +7,7 @@
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <link rel="stylesheet" href="../admin/css/bootstrap.min.css">
     <link rel="stylesheet" href="../admin/css/normalize.css">
     <link rel="stylesheet" href="../admin/css/style.css">
     <link rel="stylesheet" href="../admin/css/pushy.css">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" href="../admin/css/custom.css">
     <link rel="stylesheet" href="../admin/css/form.css">
     <link rel="stylesheet" href="../admin/css/form_add.css">
-    <link rel="stylesheet" href="../admin/css/bootstrap.min.css">
+    
     
 
     <!-- Favicon -->

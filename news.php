@@ -72,7 +72,7 @@
                 } // Конец функции
 
                 // Подготовка к постраничному выводу
-                $perpage = 1; // Количество отображаемых данных из БД
+                $perpage = 10; // Количество отображаемых данных из БД
                 if (empty($_GET['page']) || ($_GET['page'] <= 0)) {
                 $page = 1;
                 } else {
@@ -87,23 +87,28 @@
                 // Вызов функции, для вывода ссылок на экран
 
                 // Вывод информации из базы данных
-                $result = mysql_query('SELECT * FROM news ORDER BY nDate DESC LIMIT '.$start_pos.', '.$perpage) or die('error!');
+                $result = mysql_query("SELECT id, title, text, pic, DATE_FORMAT(nDate, '%d.%m.%Y') as formated_date FROM news ORDER BY nDate DESC LIMIT ".$start_pos.', '.$perpage) or die('error!');
                 while ($row = mysql_fetch_array($result)) {
                     echo <<<EOT
-                            <div id="container">
-                                <div id="container-view">
-                                    <div class="news">
-                                        <p class="news-title">$row[title]</p>
-                                        <img class="news-pic" src="$row[pic]">
-                                        <p class="news-text">$row[text]... <a class='etc' href='view.php?type=news&id=$row[id]'>Подробнее</a></p>
-                                        <p class="publication-date">Дата публикации: $row[nDate]</p>
-                                        <p>&nbsp;</p>
+                            <a class="news_link" href='view.php?type=news&id=$row[id]'>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-10 col-md-offset-1 news-block">
+                                        <div class="col-sm-2 col-md-2 hidden-xs">
+                                            <img class="news-img" src="$row[pic]">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-7 col-sm-offset-3 col-md-7 col-md-offset-3 col-lg-8 col-lg-offset-2">
+                                            <p class="news-title">$row[title]</p>
+                                            <p class="publication-date">$row[formated_date]</p>
+                                            <p class="news-text">$row[text]...</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </div>  
+                            </a>  
+                        <br>                                    
 EOT;
                 }
                 ?>
+
 
 
             </div>
