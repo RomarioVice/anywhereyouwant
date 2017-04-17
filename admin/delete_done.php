@@ -74,9 +74,6 @@
             </div>
         </div>
         </div>
-        <?php
-        include('blocks/footer-1.php');
-        ?>
     </div>
 <?php else : header('Location: login.php');?>
 <?php endif; ?>

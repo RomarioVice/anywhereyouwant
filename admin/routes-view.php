@@ -1,4 +1,10 @@
 <?php
+    require "connect.php";
+?>
+
+<?php if( isset($_SESSION['logged_user']) ) :  ?>
+
+<?php
     $id = $_GET['id'];
     $type = $_GET['type'];
 ?>
@@ -12,19 +18,15 @@ $myrow = mysql_fetch_array($result);
 include('blocks/head.php');
 ?>
     <body>
-        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
             <?php
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
             ?>
+            
+            <div style="padding-top:20px;">
+            </div>
             <div class="wrapper">
                 <div class="bg-container">
-                    <div class="row">
-                    <div style="clear:both;height:15px;width:100%"></div>
-                        <div class="ro_desc col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
-                            <h1 class="font-h1">&nbsp;</h1>
-                        </div>
-                    </div>
                     <div id="container-r-v">
                         <p class="view-text"><span class="desc">Маршрут</span></p>
                         <div class="left-right">
@@ -44,14 +46,15 @@ include('blocks/head.php');
                         <p class="view-pic"><iframe src="<?php echo $myrow['g_map']?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></p>
                         <p class="view-text"><span class="desc">Описание</span></p>
                         <p class="view-text"><?php echo $myrow['description']?></p>
-                        <br>
-                        <a href="form.php" class="etc">Перейти к форме бронирования</a>
                     </div>
+                    <div style="padding-bottom:20px;"></div>
                 </div>
-            </div>
+                </div>
             <?php
                 include('/blocks/footer-1.php');
             ?>
+  <?php else : header('Location: login.php');?>
+<?php endif; ?>
         </div>
     </body>
 </html>

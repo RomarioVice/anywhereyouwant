@@ -21,9 +21,9 @@ html, body {
     background: transparent;
 }
 
-.wrapper {
+/*.wrapper {
     height: 100%;
-}
+}*/
 
 .spin {
     -webkit-transition: all 0.5s ease;

@@ -42,7 +42,7 @@
                                 </li>
                                 <li>
                                     <label for="description">Описание:</label>
-                                    <textarea class="add_form_textarea" name="description" placeholder="Необходимая информация..."></textarea>
+                                    <textarea class="add_form_textarea" name="description" placeholder="Необходимая информация..." required></textarea>
                                 </li>
                     
                         <li class="buttons">

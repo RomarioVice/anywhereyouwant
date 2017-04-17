@@ -111,18 +111,18 @@ EOT;
                         </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="news-pages-bg">
-                <div class="news-pages">
+                <div class="news-pages-bg">
+                    <div class="news-pages">
                     <?php
                     // Вызов функции, для вывода ссылок на экран
                     yandex_link_bar($page, $count, $pages_count, 10);
                     ?>
+                    </div>
+                </div>
+                <div style="margin-bottom: 15px;">
 
                 </div>
             </div>
-            <br>
             <?php
                 include('blocks/footer-1.php');
             ?>
