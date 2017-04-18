@@ -67,7 +67,13 @@
         ?>
         <div class="wrapper">
             <div class="bg-container">
-                <h1 class="font-h1"><a name="about">Администраторская панель</a></h1>
+                <div style="height:25px;width:100%"></div>
+                <div class="row">
+                    <div class="or_admin col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                        <h1 class="font-h1">&nbsp;</h1>
+                    </div>
+                </div>
+                <div style="height:25px;width:100%"></div>
                 <!-- Your Content -->
                 <div id="container">
                     <div id = "center-plz">
@@ -93,7 +99,7 @@
                                 <th>Кол-во мест</th>
                                 <th>Место отправки</th>
                                 <th>Место назначения</th>
-                                <th>Дата отправки</th>
+                                <th>Дата поездки</th>
                                 <th>Телефон</th>
                                 <th>Дата отправки запроса</th>
                                 <?php
@@ -118,6 +124,7 @@
                                 </tr>
 EOT;
                         }
+                        
                         ?>
                         </table>
                         <div class="delbut">

@@ -1,11 +1,11 @@
 <footer>
     <div class="abstr">
         <div class="row">
-            <div class="col-xs-6 col-xs-offset-1 col-lg-3 col-lg-offset-4" style="z-index: 2;">
+            <div class="col-xs-6 col-xs-offset-1 col-lg-4 col-lg-offset-4" style="z-index: 2;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 30px;">
                         <span>Меню</span><br>
-                        <a href="index.php">Главная</a> <span>|</span> <a href="routes.php?page=1">Маршруты</a> <span>|</span> <a href="news.php?page=1">Новости</a> <span>|</span> <a href="form.php?type=orders">Заявка</a>
+                        <a href="index.php">Главная</a> <span>|</span> <a href="add.php">Добавить маршрут</a> <span>|</span> <a href="routes.php?page=1">Редактировать маршрут</a>
                     </div>
 
                     <div class="col-xs-12 col-md-12 col-lg-12" style="z-index: 2;">

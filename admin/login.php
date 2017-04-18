@@ -36,8 +36,10 @@
         <meta name="description" content="Пассажирские перевозки между Россией и ДНР.">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/form.css">
+        
 
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -63,12 +65,19 @@
         <!-- jQuery -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/parallax.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     </head>
     <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
 
-<h1 class="sign-h1">Авторизация</h1>
+            <div style="height:25px;width:100%"></div>
+                <div class="row">
+                    <div class="enter_admin col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                        <h1 class="font-h1">&nbsp;</h1>
+                    </div>
+                </div>
+            <div style="height:25px;width:100%"></div>
         <form class="contact_form" action="login.php" method="POST">
 
             <ul>

@@ -18,6 +18,7 @@ $myrow = mysql_fetch_array($result);
 include('blocks/head.php');
 ?>
     <body>
+        <div style="min-height: 1000px; background: transparent;" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
             <?php
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');

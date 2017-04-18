@@ -55,6 +55,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
         <link rel="stylesheet" href="css/pushy.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/form_reg.css">
         <!-- Favicon -->
@@ -100,8 +101,7 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script type="text/javascript" src="js/parallax.min.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
-        <script type="text/javascript" src="js/jquery.slicebox.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://vk.com/js/api/share.js?94" charset="windows-1251"></script>
         <script type="text/javascript" src="../js/jquery.mask.js"></script>
 
@@ -112,7 +112,13 @@
             include('blocks/site-header.php');
             include('blocks/menu.php');
         ?>
-    <h1 class="font-h1">Регистрация</h1>
+            
+            <div class="row">
+                <div class="new_admin col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                    <h1 class="font-h1">&nbsp;</h1>
+                </div>
+            </div>
+            
 
             <form class="contact_form" action="signup.php" method="POST">
                 <ul>

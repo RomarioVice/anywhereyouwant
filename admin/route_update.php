@@ -22,38 +22,40 @@ include('blocks/head.php');
                 include('/blocks/site-header.php');
                 include('/blocks/menu.php');
             ?>
+            <br>
             <div class="wrapper">
                 <div class="bg-container">
-                    <div class="row">
-                    <div style="clear:both;height:15px;width:100%"></div>
-                        <div class="ro_desc col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
-                            <h1 class="font-h1">&nbsp;</h1>
-                        </div>
-                    </div>
-                    <div id="container-r-v">
-                    <form action="route_update_done.php?id=<?php echo $_GET['id']?>" method="POST">
-                        <p class="view-text"><span class="desc">Маршрут</span></p>
-                        <div class="left-right">
-                            <div class="left-block">
-                                <p class="view-text"><span>Пункт отправки:</span> <input type="text" name="departure" value="<?php echo $myrow['departure'] ?>" size="20"></p>
-                                <p class="view-text"><span>Пункт назначения:</span> <input type="text" name="destination" value="<?php echo $myrow['destination']?>" size="20"></p>
-                                <p class="view-text"><span>Стоимость проезда:</span> <input type="text" name="cost" value="<?php echo $myrow['cost']?>" size="7"> рублей</p>
-                            </div>
-                            <div class="right-block">
-                                <p class="view-text"><span>Пункт отправки:</span> <?php echo $myrow['destination'] ?></p>
-                                <p class="view-text"><span>Пункт назначения:</span> <?php echo $myrow['departure']?></p>
-                                <p class="view-text"><span>Стоимость проезда:</span> <?php echo $myrow['cost']?> рублей</p>
-                            </div>
-                            <div class="cleaner"></div>
-                        </div>
-                        <p class="view-text"><span class="desc">Карта маршрута</span></p>
-                        <p class="view-pic"><textarea name="g_map" style="max-width: 775px; max-height: 175px; min-width: 300px; min-height: 175px; width: 100%; height: 100%; resize: none;"><?php echo $myrow['g_map']?></textarea></p>
-                        <p class="view-pic"><iframe src="<?php echo $myrow['g_map']?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></p>
-                        <p class="view-text"><span class="desc">Описание</span></p>
-                        <p class="view-pic"><textarea name="description" style="max-width: 775px; max-height: 300px; min-width: 300px; min-height: 300px; width: 100%; height: 100%; resize: none;"><?php echo $myrow['description']?></textarea></p>
-                        <input class="delbut1" type="submit" name="submit" value="Сохранить"/>
-                        </form>
-                    </div>
+                    <form class="add_form" action="route_update_done.php?id=<?php echo $_GET['id']?>" method="POST">
+                        <ul>
+                            <li>
+                                <label for="departure">Пункт отправки:</label>
+                                <input type="text" name="departure" placeholder="Пункт отправки" size="50" value="<?php echo $myrow['departure'] ?>" pattern="^[а-яА-Я,\-]+$" required/>
+                                <span class="add_form_hint">Верный формат "Санкт-Петербург"</span>
+                            </li>
+                            <li>
+                                <label for="destination">Пункт назначения:</label>
+                                <input type="text" name="destination" placeholder="Пункт назначения" size="50" value="<?php echo $myrow['destination']?>" pattern="^[а-яА-Я,\-]+$" required/>
+                                <span class="add_form_hint">Верный формат "Донецк"</span>
+                            </li>
+                            <li>
+                                <label for="cost">Стоимость:</label>
+                                <input type="text" name="cost" placeholder="Стоимость" size="6" value="<?php echo $myrow['cost']?>" pattern="^[0-9]+$" required/>
+                                <span class="add_form_hint">Верный формат "2100"</span>
+                            </li>
+
+                            <label for="g_map">Ссылка на карту:</label>
+                                <textarea class="add_form_textarea" name="g_map" placeholder="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d17691238.392362777!2d18.160900128900717!3d57.229761736698315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x40e0909500919a2d%3A0x36335efdc5856f84!2z0JTQvtC90LXRhtC6!3m2!1d48.015882999999995!2d37.80285!4m5!1s0x44341030ed0c22d5%3A0x98c6ba30cbc321a5!2z0JzRg9GA0LzQsNC90YHQuiwg0JzRg9GA0LzQsNC90YHQutCw0Y8g0L7QsdC7Liwg0KDQvtGB0YHQuNGP!3m2!1d68.9585244!2d33.0826598!5e0!3m2!1sru!2sua!4v1491845889930" required><?php echo $myrow['g_map']?></textarea>
+                            </li>
+                            <li>
+                                <label for="description">Описание:</label>
+                                <textarea class="add_form_textarea" name="description" placeholder="Необходимая информация..." required><?php echo $myrow['description']?></textarea>
+                            </li>
+                            <li class="buttons">
+                                <button class="submit" type="submit" name="submit">Редактировать</button>
+                            </li>
+                        </ul>
+                    </form>
+                    <br>
                 </div>
             </div>
             <?php

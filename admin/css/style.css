@@ -21,6 +21,22 @@ html, body {
     background: transparent;
 }
 
+.or_admin {
+    background: url("../img/orders_admin.svg") no-repeat center center;
+}
+
+.enter_admin {
+    background: url("../img/admin-enter.svg") no-repeat center center;
+}
+
+.new_admin {
+    background: url("../img/new-admin.svg") no-repeat center center;
+}
+
+.edit_roude_admin {
+    background: url("../img/edit-roude.svg") no-repeat center center;
+}
+
 /*.wrapper {
     height: 100%;
 }*/
@@ -432,7 +448,7 @@ h1, h2 {
     z-index: 1;
     position: absolute;
     top: -45px;
-    left: 170px;
+    left: 31px;
     opacity: 0;
 }
 
@@ -442,7 +458,7 @@ h1, h2 {
     z-index: 1;
     position: absolute;
     top: -45px;
-    left: 135px;
+    left: -4px;
     opacity: 0;
 }
 

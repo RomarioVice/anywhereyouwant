@@ -13,13 +13,13 @@
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <link rel="stylesheet" href="css/boostrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pushy.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/boostrap.min.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -47,9 +47,6 @@
     <script type="text/javascript" src="js/parallax.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
-    <script type="text/javascript" src="js/jquery.slicebox.js"></script>
-    <script type="text/javascript" src="https://vk.com/js/api/share.js?94" charset="windows-1251"></script>
     <script type="text/javascript" src="../js/jquery.mask.js"></script>
 
 </head>

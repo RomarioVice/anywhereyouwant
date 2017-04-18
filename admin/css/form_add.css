@@ -3,7 +3,6 @@
 
 /* === Form Typography === */
 html, body {
-	height: 100%;
 	overflow-x: hidden;
 	font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;}
 .add_form h2, .add_form label {font-family:Georgia, Times, "Times New Roman", serif;}
@@ -11,8 +10,8 @@ html, body {
 
 /* === Canvas for Parallax === */
 .parallax-window {
-    height: 900px;
-	top: 0;
+	 min-height: 900px;
+    background: transparent;
 }
 
 .add_form_textarea {
