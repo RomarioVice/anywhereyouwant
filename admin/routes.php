@@ -4,9 +4,44 @@
 
 <?php if( isset($_SESSION['logged_user']) ) :  ?>
 
-   <?php 
-    require "blocks/head.php";
-    ?>
+  <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Администраторская панель - Маршруты</title>
+    <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="../admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../admin/css/normalize.css">
+    <link rel="stylesheet" href="../admin/css/style.css">
+    <link rel="stylesheet" href="../admin/css/pushy.css">
+    <link rel="stylesheet" href="../admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome-animation.min.css">
+    <link rel="stylesheet" href="../admin/css/custom.css">
+    
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
     <body>
         <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
             <?php
@@ -29,8 +64,9 @@
                                 if ($pages_count == 1) return false;
                                 $sperator = '|'; // Разделитель ссылок;
                                 // Для придания ссылкам стиля
-                                $style = 'style="color: #FFFFFF; text-decoration: none;"';
-                                $styleActivated = 'style="color: #FF0000; font-size:  20px;"';
+                                $style = 'class="not-active-link"';
+                                $styleActivated = 'class="active-link"';
+                                $styleDots = 'class="disabled-link"';
                                 $begin = $page - intval($show_link / 2);
                                 unset($show_dots); // На всякий случай
                                 // Сам постраничный вывод
@@ -38,7 +74,7 @@
                                 if ($pages_count <= $show_link + 1) $show_dots = 'no';
                                 // Вывод ссылки на первую страницу
                                 if (($begin > 2) && ($pages_count - $show_link > 2)) {
-                                    echo '<a '.$style.' href='.$_SERVER['PHP_SELF'].'?page=1> |< </a> ';
+                                    echo '<a '.$style.' href='.$_SERVER['PHP_SELF'].'?page=1> <i class="fa fa-step-backward" aria-hidden="true"></i> </a> ';
                                 }
                                 for ($j = 0; $j <= $show_link; $j++) // Основный цикл вывода ссылок
                                 {
@@ -48,7 +84,7 @@
                                     if ($i < 1) continue;
                                     // Подобное находится в верхнем цикле
                                     if (!isset($show_dots) && $begin > 1) {
-                                        echo ' <a '.$style.' href='.$_SERVER['PHP_SELF'].'?page='.($i-1).'><b>...</b></a> ';
+                                        echo ' <a '.$styleDots.' href='.$_SERVER['PHP_SELF'].'?page='.($i-1).'><b>...</b></a> ';
                                         $show_dots = "no";
                                     }
                                     // Номер ссылки перевалил за возможное количество страниц
@@ -62,12 +98,12 @@
                                     if (($i != $pages_count) && ($j != $show_link)) echo $sperator;
                                     // Вывод "..." в конце
                                     if (($j == $show_link) && ($i < $pages_count)) {
-                                        echo ' <a '.$style.' href='.$_SERVER['PHP_SELF'].'?page='.($i+1).'><b>...</b></a> ';
+                                        echo ' <a '.$styleDots.' href='.$_SERVER['PHP_SELF'].'?page='.($i+1).'><b>...</b></a> ';
                                     }
                                 }
                                 // Вывод ссылки на последнюю страницу
                                 if ($begin + $show_link + 1 < $pages_count) {
-                                    echo ' <a '.$style.' href='.$_SERVER['PHP_SELF'].'?page='.$pages_count.'> >| </a>';
+                                    echo ' <a '.$style.' href='.$_SERVER['PHP_SELF'].'?page='.$pages_count.'> <i class="fa fa-step-forward" aria-hidden="true"> </a>';
                                 }
                                 return true;
                             } // Конец функции

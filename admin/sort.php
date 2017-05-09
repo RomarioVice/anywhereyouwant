@@ -13,12 +13,14 @@ require "connect.php";
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pushy.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome-animation.min.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -39,8 +41,6 @@ require "connect.php";
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <!--    <link rel="stylesheet" href="css/bootstrap.css">-->
-
     <!-- js -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/parallax.min.js"></script>
@@ -59,9 +59,17 @@ require "connect.php";
     ?>
     <div class="wrapper">
     <div class="bg-container">
-    <h1 class="font-h1"><a name="about">Администраторская панель</a></h1>
+    <div style="height:25px;width:100%"></div>
+                <div class="row">
+                    <div class="or_admin col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                        <h1 class="font-h1">&nbsp;</h1>
+                    </div>
+                </div>
+                <div style="height:25px;width:100%"></div>
     <!-- Your Content -->
     <div id="container">
+    <a class="back-button" href="index.php"><img src="img/back_button.svg" width="50px" height="50px" style="position: absolute;
+    top: 5px; left: 10px;" title="На главную" alt="На главную"></a>
         <div id = "center-plz">
             <form id="sort_f" action="sort.php" method="POST">
                 <input type="date-mask" name="sort" placeholder="Введите запрос"/>
@@ -78,7 +86,7 @@ require "connect.php";
         <th>Количетство мест</th>
         <th>Место отправки</th>
         <th>Место назначения</th>
-        <th>Дата отправки</th>
+        <th>Дата поездки</th>
         <th>Телефон</th>
         <th>Дата отправки запроса</th>
 <?php

@@ -22,6 +22,19 @@
     text-decoration: none;
     outline: 0;
 }
+
+.menu-center {
+  text-align: center;
+}
+
+#another {
+  display: inline-block;
+  color: #FFF;
+  text-decoration: none;
+  outline: 0;
+  padding: 10px 15px;
+}
+
 .pushy a:hover {
     background: #5a246e;
 }
@@ -169,3 +182,4 @@
   max-height: none;
   display: none;
 }
+

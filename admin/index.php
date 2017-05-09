@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pushy.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome-animation.min.css">
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Favicon -->
@@ -47,9 +48,6 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
-    <script type="text/javascript" src="js/jquery.slicebox.js"></script>
-    <script type="text/javascript" src="https://vk.com/js/api/share.js?94" charset="windows-1251"></script>
-    <script type="text/javascript" src="../js/jquery.mask.js"></script>
 
     <script>
         setInterval(function(){

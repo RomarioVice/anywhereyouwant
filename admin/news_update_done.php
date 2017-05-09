@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Маршрут изменён</title>
+    <title>Запись изменена</title>
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -61,19 +61,57 @@
         ?>
 
         <div class="wrapper">
-    <?php
-        $id = $_GET['id'];
-        $description = nl2br($_POST['description']);
-        $result = mysql_query("UPDATE services SET departure = '$_POST[departure]', destination = '$_POST[destination]', cost = '$_POST[cost]', g_map = '$_POST[g_map]', description = '$description' WHERE id_route = '$_GET[id]'");
-        echo '<meta http-equiv="Refresh" content="1; URL=routes.php"';
-    ?>
-
         <div style="clear:both;height:100px;width:100%"></div>
         <div class="row">
             <div class="edit_route_admin col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
                 <h1 class="font-h1">&nbsp;</h1>
             </div>
         </div>
+        <?php
+            //путь загрузки изображения
+            global $picture_name; 
+            $path = 'img/slider/';
+            $tmp_path = 'tmp/';
+
+            // Массив допустимых значений типа файла
+            $types = array('image/gif', 'image/png', 'image/jpeg');
+
+            // Максимальный размер файла
+            $size = 3072000;
+                                     
+            //обработка запроса
+            if ($_SERVER['REQUEST_METHOD'] == 'POST')
+                {
+                    // Проверяем тип файла
+                    if (!empty($_FILES['picture']['type']) && !in_array($_FILES['picture']['type'], $types)) 
+                        die('Запрещённый тип файла. <a href="?">Попробовать другой файл?</a>');
+
+                    // Проверяем размер файла
+                    if ($_FILES['picture']['size'] > $size)
+                        die('Слишком большой размер файла. <a href="?">Попробовать другой файл?</a>');
+
+
+                    // Загрузка файла и вывод сообщения
+                    if (!@copy($_FILES['picture']['tmp_name'], $path . $_FILES['picture']['name']))
+                        echo '...';
+                    else
+                    {
+                        // echo 'Загрузка удачна <a href="' . $path . $_FILES['picture']['name'] . '">Посмотреть</a>  ' ;
+                        $picture_name = $path . $_FILES['picture']['name'];
+                        
+                    }
+                    // echo $picture_name;
+                }
+        ?>
+
+	<?php
+		$id = $_GET['id'];
+        $short_desc = substr($_POST['fullTxt'], 0, 295);
+        $description = nl2br($_POST['fullTxt']);
+		$result = mysql_query("UPDATE news SET title = '$_POST[title]', pic = '$picture_name', text = '$short_desc', fullTxt = '$description' WHERE id = '$_GET[id]'");
+		echo '<meta http-equiv="Refresh" content="1; URL=news.php"';
+	?>
+
 
 
 

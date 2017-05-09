@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../admin/css/style.css">
     <link rel="stylesheet" href="../admin/css/pushy.css">
     <link rel="stylesheet" href="../admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome-animation.min.css">
     <link rel="stylesheet" href="../admin/css/custom.css">
     <link rel="stylesheet" href="../admin/css/form.css">
     <link rel="stylesheet" href="../admin/css/form_add.css">

@@ -13,7 +13,7 @@
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" href="css/boostrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pushy.css">
@@ -60,8 +60,9 @@
         <div class="wrapper">
 
         <?php
-            $result = mysql_query("INSERT INTO services (departure, destination, cost, g_map, description) VALUES ('$_POST[departure]', '$_POST[destination]', '$_POST[cost]', '$_POST[g_map]','$_POST[description]')");
-            echo '<meta http-equiv="Refresh" content="0; URL=add.php">';
+        $description = nl2br($_POST['description']);
+            $result = mysql_query("INSERT INTO services (departure, destination, cost, g_map, description) VALUES ('$_POST[departure]', '$_POST[destination]', '$_POST[cost]', '$_POST[g_map]','$description')");
+            echo '<meta http-equiv="Refresh" content="1; URL=add.php">';
         ?>
         <div style="clear:both;height:100px;width:100%"></div>
         <div class="row">

@@ -69,7 +69,7 @@
 
     </head>
     <body>
-        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
 
             <div style="height:25px;width:100%"></div>
                 <div class="row">

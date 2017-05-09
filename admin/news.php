@@ -1,8 +1,47 @@
 <?php
-    include('/blocks/head.php');
+    require "connect.php";
 ?>
+
+<?php if( isset($_SESSION['logged_user']) ) :  ?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Администраторская панель - Новости</title>
+    <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="../admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../admin/css/normalize.css">
+    <link rel="stylesheet" href="../admin/css/style.css">
+    <link rel="stylesheet" href="../admin/css/pushy.css">
+    <link rel="stylesheet" href="../admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome-animation.min.css">
+    <link rel="stylesheet" href="css/hover-min.css" media="all">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    </head>
     <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
         <?php
             require_once('/blocks/config.php');
                 include('/blocks/site-header.php');
@@ -10,7 +49,7 @@
                 include('/blocks/connect.php');
             ?>
 
-        <div class="wrapper">
+        <div class="wrapper-news">
             <div class="bg-container">
                 <div class="row">
                 <div style="clear:both;height:15px;width:100%"></div>
@@ -91,20 +130,26 @@
                 $result = mysql_query("SELECT id, title, text, pic, DATE_FORMAT(nDate, '%d.%m.%Y') as formated_date FROM news ORDER BY nDate DESC LIMIT ".$start_pos.', '.$perpage) or die('error!');
                 while ($row = mysql_fetch_array($result)) {
                     echo <<<EOT
-                            <a class="news_link" href='view.php?type=news&id=$row[id]'>
+                            <div class="news_link">
+                            
                                 <div class="row">
                                     <div class="col-xs-12 col-md-10 col-md-offset-1 news-block">
                                         <div class="col-sm-2 col-md-2 hidden-xs">
                                             <img class="news-img" src="$row[pic]">
                                         </div>
                                         <div class="col-xs-12 col-sm-7 col-sm-offset-3 col-md-7 col-md-offset-3 col-lg-8 col-lg-offset-2">
+                                            <div class="button-links">
+                                <a href="view.php?type=news&id=$row[id]"><img class="watch_news_button" src="img/ic.svg" title="Просмотр"/></a>
+                                            <a href="news_update.php?type=news&id=$row[id]"><img class="edit_news_button" src="img/edit.svg" title="Редактировать"/></a>
+                                            <a href="delete_news_done.php?type=news&id=$row[id]"><img class="delete_news_button" src="img/delete.svg" onClick="document.location.reload(true)" title="Удалить"/></a>
+                                </div>
                                             <p class="news-title">$row[title]</p>
                                             <p class="publication-date">$row[formated_date]</p>
                                             <p class="news-text">$row[text]...</p>
                                         </div>
                                     </div>
                                 </div>  
-                            </a>  
+                            </div>
                         <br>                                    
 EOT;
                 }
@@ -126,5 +171,7 @@ EOT;
             include('blocks/footer-1.php');
         ?>
     </div>
+    <?php else : header('Location: login.php');?>
+    <?php endif; ?>
     </body>
 </html>

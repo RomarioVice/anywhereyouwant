@@ -281,7 +281,6 @@ ul {
 }
 
 
-
 #container-form {
     padding: 0px;
     margin: 0 auto;
@@ -299,7 +298,7 @@ ul {
     max-width: 940px;
     min-height: 300px;
     background: url(../img/bg-banner1.png);
-    border-radius: 30px;
+    border-radius: 10px;
     position: relative;
 }
 
@@ -659,18 +658,90 @@ a.etc:hover {
 .news-pages {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
 
+.disabled-link {
+    text-align: center; 
+    width: 40px; 
+    font-size: 17px;
+    background: #FFFF3E;
+    border-radius: 2px; 
+    color: purple;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+    margin: 0 4px 0 4px;
+}
+
+.not-active-link {
+    text-align: center; 
+    width: 40px; 
+    font-size: 17px; 
+    background: #FFFF3E; 
+    border-radius: 2px; 
+    color: purple; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.not-active-link:hover {
+    background-color: #FFFF6B;
+    color: purple; 
+    text-decoration: none;
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+}
+
+.active-link {
+    text-align: center; 
+    vertical-align: middle;
+    width: 40px;    
+    background: #B030B0; 
+    border-radius: 2px; 
+    color: #FFFFFF; 
+    font-size: 17px; 
+    text-decoration: none; 
+    cursor: context-menu;
+    border-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.active-link:hover {
+    color: #FFFFFF; 
+    text-decoration: none;
+}
+
+.not-active-link-first {
+    text-align: center; 
+    width: 40px; 
+    font-size: 17px; 
+    background: purple; 
+    border-radius: 5px; 
+    color: #FFFFFF; 
+    text-decoration: none;
+}
+
+.not-active-link-last {
+    text-align: center; 
+    width: 40px; 
+    font-size: 17px; 
+    background: purple; 
+    border-radius: 5px; 
+    color: #FFFFFF; 
+    text-decoration: none;"
+}
+
 .news-pages-bg {
-    background-image: url('../img/bg-banner1.png');
+    /*background-image: url('../img/bg-banner1.png');*/
     margin: 0 auto;
     min-width: 0px;
-    max-width: 100px;
+    max-width: 428px;
     padding: 10px;
-    border-radius: 30px;
 }
 
 .info:link {
@@ -743,7 +814,7 @@ a.etc:hover {
 }
 
 .desc {
-    font-size: large;
+    font-size: 20pt;
 
 }
 
@@ -814,7 +885,7 @@ a.etc:hover {
 .buttons {
     margin: auto;
     height: 30px;
-    width: 400px;
+    max-width: 400px;
 }
 
 .send {

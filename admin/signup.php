@@ -54,10 +54,13 @@
         <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-        <link rel="stylesheet" href="css/pushy.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="css/pushy.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/form_reg.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font-awesome-animation.min.css">
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -107,7 +110,7 @@
 
     </head>
     <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_parallax.jpg">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
         <?php
             include('blocks/site-header.php');
             include('blocks/menu.php');

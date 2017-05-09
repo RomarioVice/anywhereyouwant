@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Администраторская панель - Увезём - куда захочешь!</title>
+    <title>Маршрут удален</title>
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -64,7 +64,7 @@
 
             <?php
                 $result = mysql_query("DELETE FROM services WHERE id_route = '$_GET[id]'");
-               echo '<meta http-equiv="Refresh" content="0; URL=routes.php">';
+               echo '<meta http-equiv="Refresh" content="1; URL=routes.php">';
 
             ?>
             <div style="clear:both;height:100px;width:100%"></div>

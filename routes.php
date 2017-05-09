@@ -28,10 +28,13 @@
                                 // нагляднее будет, когда это число будет парное
                                 // Если страница всего одна, то вообще ничего не выводим
                                 if ($pages_count == 1) return false;
-                                $sperator = '|'; // Разделитель ссылок;
+                                $sperator = '&nbsp;'; // Разделитель ссылок;
                                 // Для придания ссылкам стиля
-                                $style = 'style="color: #FFFFFF; text-decoration: none;"';
-                                $styleActivated = 'style="color: #FF0000; font-size:  20px;"';
+                                $style = 'class="not-active-link"';
+                                $styleActivated = 'class="active-link"';
+                                $styleFirst = 'class="not-active-link-first"';
+                                $styleLast = 'class="not-active-link-last"';
+                                $styleDots = 'class="disabled-link"';
                                 $begin = $page - intval($show_link / 2);
                                 unset($show_dots); // На всякий случай
                                 // Сам постраничный вывод
@@ -39,7 +42,7 @@
                                 if ($pages_count <= $show_link + 1) $show_dots = 'no';
                                 // Вывод ссылки на первую страницу
                                 if (($begin > 2) && ($pages_count - $show_link > 2)) {
-                                    echo '<a '.$style.' href='.$_SERVER['PHP_SELF'].'?page=1> |< </a> ';
+                                    echo '<a '.$style.' href='.$_SERVER['PHP_SELF'].'?page=1> <i class="fa fa-step-backward" aria-hidden="true"></i> </a> ';
                                 }
                                 for ($j = 0; $j <= $show_link; $j++) // Основный цикл вывода ссылок
                                 {
@@ -49,7 +52,7 @@
                                     if ($i < 1) continue;
                                     // Подобное находится в верхнем цикле
                                     if (!isset($show_dots) && $begin > 1) {
-                                        echo ' <a '.$style.' href='.$_SERVER['PHP_SELF'].'?page='.($i-1).'><b>...</b></a> ';
+                                        echo ' <a '.$styleDots.' href='.$_SERVER['PHP_SELF'].'?page='.($i-1).'>...</a> ';
                                         $show_dots = "no";
                                     }
                                     // Номер ссылки перевалил за возможное количество страниц
@@ -63,18 +66,18 @@
                                     if (($i != $pages_count) && ($j != $show_link)) echo $sperator;
                                     // Вывод "..." в конце
                                     if (($j == $show_link) && ($i < $pages_count)) {
-                                        echo ' <a '.$style.' href='.$_SERVER['PHP_SELF'].'?page='.($i+1).'><b>...</b></a> ';
+                                        echo ' <a '.$styleDots.' href='.$_SERVER['PHP_SELF'].'?page='.($i+1).'>...</a> ';
                                     }
                                 }
                                 // Вывод ссылки на последнюю страницу
                                 if ($begin + $show_link + 1 < $pages_count) {
-                                    echo ' <a '.$style.' href='.$_SERVER['PHP_SELF'].'?page='.$pages_count.'> >| </a>';
+                                    echo ' <a '.$style.' href='.$_SERVER['PHP_SELF'].'?page='.$pages_count.'> <i class="fa fa-step-forward" aria-hidden="true"></i> </a>';
                                 }
                                 return true;
                             } // Конец функции
 
                             // Подготовка к постраничному выводу
-                            $perpage = 30; // Количество отображаемых данных из БД
+                            $perpage = 20; // Количество отображаемых данных из БД
                             if (empty($_GET['page']) || ($_GET['page'] <= 0)) {
                                 $page = 1;
                             } else {
@@ -117,7 +120,7 @@ EOT;
                 <div class="news-pages">
                     <?php
                     // Вызов функции, для вывода ссылок на экран
-                    yandex_link_bar($page, $count, $pages_count, 10);
+                    yandex_link_bar($page, $count, $pages_count, 5);
                     ?>
                 </div>
             </div>

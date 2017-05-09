@@ -8,18 +8,18 @@
 }
 
 html, body {
-    min-width: 520px;
-    font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+    /*min-width: 520px;*/
+    font: 14px "Trebuchet MS", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
 }
 
-.parallax-window {
+/*.parallax-window {
     top: 0;
     height: 100%;
     width: 100%;
     background: transparent;
-}
+}*/
 
 .or_admin {
     background: url("../img/orders_admin.svg") no-repeat center center;
@@ -33,13 +33,17 @@ html, body {
     background: url("../img/new-admin.svg") no-repeat center center;
 }
 
-.edit_roude_admin {
-    background: url("../img/edit-roude.svg") no-repeat center center;
+.edit_route_admin {
+    background: url("../img/edit_route.svg") no-repeat center center;
 }
 
-/*.wrapper {
+.wrapper-news {
     height: 100%;
-}*/
+}
+
+.news_bg {
+    background: url("../img/news_bg_text.svg") no-repeat center center;
+}
 
 .spin {
     -webkit-transition: all 0.5s ease;
@@ -95,6 +99,7 @@ ul {
 .bg-container {
     /*background-image: url(../img/opacity72.png);*/
     width: 100%;
+    border-radius: 30px;
 }
 
 .bg-container-form {
@@ -123,7 +128,7 @@ ul {
     margin: 0 auto;
     color: burlywood;
     max-width: 940px;
-    min-width: 520px;
+    min-width: 457px;
     min-height: 400px;
     background-size: cover;
     border-radius: 30px;
@@ -147,8 +152,36 @@ ul {
     max-width: 940px;
     min-height: 300px;
     background: url(../img/bg-banner1.png);
-    border-radius: 30px;
+    border-radius: 10px;
     position: relative;
+}
+
+.view-title {
+    color: #FFFFFF;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 20pt;
+}
+
+.view-text {
+    text-indent: 20px;
+    padding: 20px 15px 0px 15px;
+    text-align: justify;
+    margin: 0 auto;
+    max-width: 700px
+}
+
+.view-date {
+    color: #ffffff;
+    padding: 15px;
+    font-size: 9pt;
+}
+
+.view-pic {
+    display: block;
+    max-width:100%;
+    height:auto;
+    margin: 0 auto;
 }
 
 .wrapper-result {
@@ -167,7 +200,113 @@ ul {
     position: relative;
 }
 
+.disabled-link {
+    text-align: center; 
+    width: 40px; 
+    font-size: 17px;
+    background: #FFFF3E;
+    border-radius: 2px; 
+    color: purple;
+    text-decoration: none;
+    pointer-events: none;
+    cursor: default;
+    margin: 0 4px 0 4px;
+}
 
+.not-active-link {
+    text-align: center; 
+    width: 40px; 
+    font-size: 17px; 
+    background: #FFFF3E; 
+    border-radius: 2px; 
+    color: purple; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.not-active-link:hover {
+    background-color: #FFFF6B;
+    color: purple; 
+    text-decoration: none;
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+}
+
+.active-link {
+    text-align: center; 
+    vertical-align: middle;
+    width: 40px;    
+    background: #B030B0; 
+    border-radius: 2px; 
+    color: #FFFFFF; 
+    font-size: 17px; 
+    text-decoration: none; 
+    cursor: context-menu;
+    border-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.active-link:hover {
+    color: #FFFFFF; 
+    text-decoration: none;
+}
+
+.not-active-link-first {
+    text-align: center; 
+    width: 40px; 
+    font-size: 17px; 
+    background: purple; 
+    border-radius: 5px; 
+    color: #FFFFFF; 
+    text-decoration: none;
+}
+
+.not-active-link-last {
+    text-align: center; 
+    width: 40px; 
+    font-size: 17px; 
+    background: purple; 
+    border-radius: 5px; 
+    color: #FFFFFF; 
+    text-decoration: none;"
+}
+
+.news-img {
+    height: 170px;
+    width: auto;
+}
+
+.news-title {
+    color: #FFE385;
+    font-size: 20pt;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 6px #000000;
+}
+
+.news-block {
+    background-image: url(../img/news_bg.png);
+    background-size: cover;
+    border-radius: 7px;
+}
+
+.news-block:hover {
+    background-image: url(../img/news_bg_hover.png);
+    background-size: cover;
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+}
+
+.news-text {
+    color: white;
+    font-size: 14px;
+    text-indent: 30px;
+    text-align: justify;
+    padding: 4px;
+    text-shadow: 1px 1px 2px #000000;
+ }
 
 .main {
     text-indent: 30px;
@@ -237,6 +376,12 @@ ul {
     transform: scale(1.1);
 }
 
+.back-button {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+}
+
 .delbut {
     display: flex;
     flex-direction: row;
@@ -259,8 +404,7 @@ ul {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     background: -moz-linear-gradient(0% 100% 90deg, #e30020, #ff4f5c);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff4f5c),
-    to(#e30020));
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff4f5c), to(#e30020));
     box-shadow: inset 0 1px 0 0 #FFFFFF;
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
@@ -462,6 +606,52 @@ h1, h2 {
     opacity: 0;
 }
 
+.news_link:hover .delete_news_button {
+    opacity: 1;
+}
+
+.news_link:hover .edit_news_button {
+    opacity: 1;
+}
+
+.news_link:hover .watch_news_button {
+    opacity: 1;
+}
+
+.button-links {
+    position: absolute;
+    top: -9px;
+    left: 0px;
+    z-index: 1;
+}
+
+.delete_news_button {
+    height: 50px; 
+    width: : 50px;
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    left: 105px;
+    opacity: 0;
+}
+
+.edit_news_button {
+    height: 50px; 
+    width: : 50px;
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    left: 35px;
+    opacity: 0;
+}
+
+.watch_news_button {
+    height: 50px; 
+    width: : 50px;
+    z-index: 2;
+    opacity: 0;
+}
+
 #routes {
     margin: 20px auto;
     text-align: center;
@@ -476,100 +666,35 @@ h1, h2 {
     font-size: 56pt;
 }
 
-.news {
-    text-align: justify;
-    margin: 0px 20px 0px 20px;
-}
-
-.news-title {
-    color: #ffffff;
-    font-size: 16pt;
-    display: block;
-    text-align: center;
-    padding-top: 30px;
-}
-
-.news-text {
-    text-indent: 30px;
-    text-align: justify;
-    padding-bottom: 20px;
-}
-
-a.etc {
-    text-indent: 0px;
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 3px 3px;
-    font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
-    -webkit-transition: 0.4s ease-in-out;
-    -o-transition: 0.4s ease-in-out;
-    transition: 0.4s ease-in-out;
-    color: #E7E5DD;
-    border-radius: 25px;
-    border: 3px solid #E7E5DD;
-}
-
-a.etc:hover {
-    color: #000000;
-    background: #E7E5DD;
-}
-
-.publication-date{
-    color: #ffffff;
-    position: absolute;
-    bottom: 0px;
-    left: 30px;
-    text-align: right;
-    font-size: 9pt;
-}
-
-.view-title {
-    color: #FFFFFF;
-    padding-top: 30px;
-    text-align: center;
-    font-size: 20pt;
-}
-
-.view-text {
-    text-indent: 20px;
-    padding: 0px 15px 0px 15px;
-    text-align: justify;
-}
-
-.view-date {
-    color: #ffffff;
-    padding: 15px;
-    font-size: 9pt;
-}
-
-.news-pic, .view-pic {
-    margin-left:auto;
-    margin-right:auto;
-    text-align:center;
-    width:100%;
-    height:auto;
-}
-
 .news-pages {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
 
 .news-pages-bg {
-    background-image: url('../img/bg-banner1.png');
+    /*background-image: url('../img/bg-banner1.png');*/
     margin: 0 auto;
     min-width: 0px;
-    max-width: 100px;
+    max-width: 428px;
     padding: 10px;
-    border-radius: 30px;
+}
+
+.publication-date{
+    color: #8238A9;
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    text-align: right;
+    font-size: 9pt;
+    background-color: #F0FF71;
+    padding: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .75);
+    -moz-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .75);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .75);
 }
 
 .info:link {
@@ -642,7 +767,7 @@ a.etc:hover {
 }
 
 .desc {
-    font-size: large;
+    font-size: 20pt;
 
 }
 

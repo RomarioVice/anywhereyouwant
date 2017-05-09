@@ -3,12 +3,13 @@
 ?>
 
 <?php if( isset($_SESSION['logged_user']) ) :  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Маршрут изменён</title>
+    <title>Администраторская панель - Увезём - куда захочешь!</title>
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -46,9 +47,6 @@
     <script type="text/javascript" src="js/parallax.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
-    <script type="text/javascript" src="js/jquery.slicebox.js"></script>
-    <script type="text/javascript" src="https://vk.com/js/api/share.js?94" charset="windows-1251"></script>
     <script type="text/javascript" src="../js/jquery.mask.js"></script>
 
 </head>
@@ -59,27 +57,61 @@
         include('blocks/menu.php');
         include('blocks/connect.php');
         ?>
-
         <div class="wrapper">
-    <?php
-        $id = $_GET['id'];
-        $description = nl2br($_POST['description']);
-        $result = mysql_query("UPDATE services SET departure = '$_POST[departure]', destination = '$_POST[destination]', cost = '$_POST[cost]', g_map = '$_POST[g_map]', description = '$description' WHERE id_route = '$_GET[id]'");
-        echo '<meta http-equiv="Refresh" content="1; URL=routes.php"';
-    ?>
 
+    <?php
+    //путь загрузки изображения
+    global $picture_name; 
+    $path = 'img/slider/';
+    $tmp_path = 'tmp/';
+
+    // Массив допустимых значений типа файла
+    $types = array('image/gif', 'image/png', 'image/jpeg');
+
+    // Максимальный размер файла
+    $size = 3072000;
+                             
+    //обработка запроса
+    if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+            // Проверяем тип файла
+            if (!in_array($_FILES['picture']['type'], $types)) 
+                die('Запрещённый тип файла. <a href="?">Попробовать другой файл?</a>');
+
+            // Проверяем размер файла
+            if ($_FILES['picture']['size'] > $size)
+                die('Слишком большой размер файла. <a href="?">Попробовать другой файл?</a>');
+
+
+            // Загрузка файла и вывод сообщения
+            if (!@copy($_FILES['picture']['tmp_name'], $path . $_FILES['picture']['name']))
+                echo 'Что-то пошло не так';
+            else
+            {
+                // echo 'Загрузка удачна <a href="' . $path . $_FILES['picture']['name'] . '">Посмотреть</a>  ' ;
+                $picture_name = $path . $_FILES['picture']['name'];
+                
+            }
+            // echo $picture_name;
+        }
+        ?>
+
+        <?php
+            $today_date = date("Y-m-d");
+            $short_desc = substr($_POST['fullTxt'], 0, 295);
+            $description = nl2br($_POST['fullTxt']);
+            $result = mysql_query("INSERT INTO news (nDate, title, pic, text, fullTxt) VALUES ('$today_date','$_POST[title]', '$picture_name', '$short_desc', '$description')");
+        echo '<meta http-equiv="Refresh" content="1; URL=add-news.php"';
+        ?>
         <div style="clear:both;height:100px;width:100%"></div>
-        <div class="row">
-            <div class="edit_route_admin col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
-                <h1 class="font-h1">&nbsp;</h1>
+            <div class="row">
+                <div class="add_done col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
+                    <h1 class="font-h1">&nbsp;</h1>
+                </div>
             </div>
         </div>
-
-
-
+<?php else : header('Location: login.php');?>
+<?php endif; ?>
         </div>
-  <?php else : header('Location: login.php');?>
-    <?php endif; ?>
-    </div>
     </body>
 </html>
