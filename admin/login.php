@@ -8,7 +8,11 @@
         $admin = R::findOne('admins', 'login = ?', array($data['login']));
         if( $admin ){
             //  логин сущесвтует в БД
-            if( password_verify($data['password'], $admin->password) ){
+            if ($admin->status == 0) { 
+                $errors[] = 'Аккаунт не активирован!';
+            }
+                
+            elseif( password_verify($data['password'], $admin->password) ){
                 // логинимся
                 $_SESSION['logged_user'] = $admin;
                 header('Location: index.php');
@@ -37,9 +41,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/form.css">
-        
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font-awesome-animation.min.css">        
 
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -69,39 +74,46 @@
 
     </head>
     <body>
-        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
+        <div class="wrapper">
 
             <div style="height:25px;width:100%"></div>
-                <div class="row">
+               <!--  <div class="row">
                     <div class="enter_admin col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
                         <h1 class="font-h1">&nbsp;</h1>
                     </div>
-                </div>
+                </div> -->
             <div style="height:25px;width:100%"></div>
-        <form class="contact_form" action="login.php" method="POST">
-
-            <ul>
-                <li>
-                    <?php
+             <?php
                         if( ! empty($errors) ){
                             echo '<div class="canceled">'.array_shift($errors).'</div>';
                         }
                     ?>
-                </li>
-                <li>
-                    <p class="t_login">Логин</p>
-                    <input type="text" name="login" value="<?php echo @$data['login'];?>">
-                </li>
+            <div style="height:25px;width:100%"></div>
+            <div class="contact-form-bg">
+                <form class="contact_form" action="login.php" method="POST" autocomplete="off">
 
-                <li>
-                    <p class="t_login">Пароль</p>
-                    <input type="password" name="password" value="<?php echo @$data['password'];?>">
-                </li>
+                    <div class="admin-logo">
+                        <img src="img/admin-logo.svg" height="50px" width="50px">
+                    </div>
 
-                <li class="buttons">
-                    <button class="submit" type="submit" name="do_login">Войти</button>
-                </li>
-        </form>
+                    <ul>
+                        <div class="LP-bg">
+                            <li>
+                                <img src="img/login_icon.svg" height="20px" width="30px"><input type="text" name="login" value="" placeholder="Логин">
+                                <hr>
+                                <img src="img/password_icon.svg" height="20px" width="30px"><input type="password" name="password" value="" placeholder="Пароль">
+                            </li>
+                        </div>
+                    
+                        <li class="buttons">
+                            <button class="submit faa-parent animated-hover" type="submit" name="do_login"><i class="fa fa-sign-in fa-2x faa-ring" aria-hidden="true"></i> Войти</button> <a class="faa-parent animated-hover submit" href="signup.php">
+                                <i class="fa fa-user-plus fa-2x faa-ring"></i> Регистрация</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        <div style="height:25px;width:100%"></div>
+        </div>
 </div>
 </body>
 </html>

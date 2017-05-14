@@ -6,9 +6,22 @@ body {font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-ser
 .contact_form h2, .contact_form label {font-family:Georgia, Times, "Times New Roman", serif;}
 .form_hint, .required_notification {font-size: 11px;}
 
-.contact_form {
+/*.contact_form {
 	padding: 10px 20px;
     margin: 10px;
+}*/
+
+.contact-form-bg {
+	display: table;
+	height: 500px;
+	width: 400px;
+	background: url(../img/bg-form.svg) center no-repeat;
+	margin: auto;
+}
+
+.contact_form {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 /* === List Styles === */
@@ -19,8 +32,20 @@ body {font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-ser
 	margin:0px;
 	padding:0px;
 }
-.contact_form li{
-	padding:12px;
+
+/* === Popup message === */
+.canceled {
+	font-size: medium;
+	color: #FFB6C1;
+	background: url(../img/bg-banner1.png);
+	text-align: center;
+}
+
+.success {
+	font-size: medium;
+	color: #1cff00;
+	background: url(../img/bg-banner1.png);
+	text-align: center;
 }
 
 /* === Form Header === */
@@ -43,61 +68,79 @@ body {font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-ser
 	color: white;
 }
 .contact_form input {
+	background: transparent;
 	height:30px;
-	width:220px;
+	width:190px;
 	padding:5px 8px;
+	border:0px solid #555;
+	color: white;
 }
 
 .contact_form select{
+	background: transparent;
 	height:30px;
-	width:220px;
+	width:190px;
 	padding:5px 8px;
+	border:0px solid #555;
+	color: white;
 }
+
+select:required:invalid {
+  color: white;
+  font-style: italic;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+	font-style: normal;
+  	color: black;
+}
+
 	/* form element visual styles */
 	.contact_form input, .contact_form select {
-		border:1px solid #aaa;
-		box-shadow: 0px 0px 3px #ccc;
-		border-radius:2px;
+		background: transparent;
+		border-radius:0px;
 		padding-right:30px;
+		border:0px solid #555;
 		-moz-transition: padding .25s;
 		-webkit-transition: padding .25s;
 		-o-transition: padding .25s;
 		transition: padding .25s;
 	}
 	.contact_form input:focus, .contact_form select:focus {
-		background: #fff;
-		border:1px solid #555;
-		box-shadow: 0 0 3px #aaa;
+		background: transparent;
+		border:0px solid #555;
+		box-shadow: 0 0 0px #aaa;
 		padding-right:70px;
 	}
 
+	input::-webkit-input-placeholder { 
+		color:#ffffff;
+		font-style: italic;
+	}
+
 /* === HTML5 validation styles === */	
-.contact_form input:required, .contact_form select:required {
+/*.contact_form input:required, .contact_form select:required {
 	background: #fff url(../img/red_asterisk.png) no-repeat 98% center;
 }
 .contact_form select:required {
 	background: #fff url(../img/red_asterisk.png) no-repeat 93% center;
-}
+}*/
 .contact_form input:required:valid {
-	background: #fff url(../img/valid.png) no-repeat 98% center;
-	box-shadow: 0 0 5px #5cd053;
-	border-color: #28921f;
+	background: transparent url(../img/valid.png) no-repeat 98% center;
 }
 .contact_form select:required:valid {
-	background: #fff url(../img/valid.png) no-repeat 93% center;
-	box-shadow: 0 0 5px #5cd053;
-	border-color: #28921f;
+	background: transparent url(../img/valid.png) no-repeat 93% center;
 }
 .contact_form input:focus:invalid {
-	background: #fff url(../img/invalid.png) no-repeat 98% center;
-	box-shadow: 0 0 5px #d45252;
-	border-color: #b03535
+	background: transparent url(../img/invalid.png) no-repeat 98% center;
 }
 
 .contact_form select:focus:invalid{
-	background: #fff url(../img/invalid.png) no-repeat 93% center;
-	box-shadow: 0 0 5px #d45252;
-	border-color: #b03535
+	background: transparent url(../img/invalid.png) no-repeat 93% center;
 }
 
 /* === Form hints === */
@@ -121,6 +164,15 @@ body {font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-ser
 .contact_form input:focus + .form_hint {display: inline;}
 .contact_form input:required:valid + .form_hint {background: #28921f;}
 .contact_form input:required:valid + .form_hint::before {color:#28921f;}
+
+.contact_form input::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.3s ease;}
+.contact_form input::-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.3s ease;}
+.contact_form input:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.3s ease;}
+.contact_form input:-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.3s ease;}
+.contact_form input:focus::-webkit-input-placeholder {text-indent: 500px; transition: text-indent 0.3s ease;}
+.contact_form input:focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.3s ease;}
+.contact_form input:focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.3s ease;}
+.contact_form input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.3s ease;}
 	
 /* === Button Style === */
 
@@ -129,85 +181,55 @@ body {font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-ser
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
+	margin-top: 20px;
 }
 
-
-button.submit {
-	background-color: #68b12f;
-	background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
-	background: -webkit-linear-gradient(top, #68b12f, #50911e);
-	background: -moz-linear-gradient(top, #68b12f, #50911e);
-	background: -ms-linear-gradient(top, #68b12f, #50911e);
-	background: -o-linear-gradient(top, #68b12f, #50911e);
-	background: linear-gradient(top, #68b12f, #50911e);
-	border: 1px solid #509111;
-	border-bottom: 1px solid #5b992b;
-	border-radius: 3px;
+button.submit, button.reset {
+	width: 160px;
+	height: 44px;
+	background: #f7f4f7;
+	background-image: -webkit-linear-gradient(#f7f4f7, #e3e3e3);
+	background-image: -o-linear-gradient(#f7f4f7, #e3e3e3);
+	background-image: linear-gradient(#f7f4f7, #e3e3e3);
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	border: 1px solid #b147cc;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 	-o-border-radius: 3px;
-	box-shadow: inset 0 1px 0 0 #9fd574;
-	-webkit-box-shadow: 0 1px 0 0 #9fd574 inset ;
-	-moz-box-shadow: 0 1px 0 0 #9fd574 inset;
-	-ms-box-shadow: 0 1px 0 0 #9fd574 inset;
-	-o-box-shadow: 0 1px 0 0 #9fd574 inset;
-	color: white;
+	color: #DA70D6;
 	font-weight: bold;
 	padding: 6px 20px;
 	text-align: center;
-	text-shadow: 0 -1px 0 #396715;
+	text-decoration: none;
 }
-button.submit:hover {
+button.submit:hover, button.reset:hover {
+	color: purple;
+	background: #ffffff;
+  	text-decoration: none;
 	cursor: pointer; 
 }
-
-button.submit:active {
-	border: 1px solid #20911e;
-	box-shadow: 0 0 10px 5px #356b0b inset; 
-	-webkit-box-shadow:0 0 10px 5px #356b0b inset ;
-	-moz-box-shadow: 0 0 10px 5px #356b0b inset;
-	-ms-box-shadow: 0 0 10px 5px #356b0b inset;
-	-o-box-shadow: 0 0 10px 5px #356b0b inset;
-	
+button.submit:active, button.reset:active{
+	border: 1px solid #b147cc;
+	box-shadow: 0 0 10px 5px #73398d inset;
+	-webkit-box-shadow:0 0 10px 5px #73398d inset ;
+	-moz-box-shadow: 0 0 10px 5px #73398d inset;
+	-ms-box-shadow: 0 0 10px 5px #73398d inset;
+	-o-box-shadow: 0 0 10px 5px #73398d inset;
 }
 
+.LP-bg
+{
+	margin: 0 auto;
+	background-image: url(../admin/img/LR-bg.svg);
+	width: 250px;
 
-button.reset {
-	background-color: #b10900;
-	background: -webkit-gradient(linear, left top, left bottom, from(#b10900), to(#910035));
-	background: -webkit-linear-gradient(top, #b10900, #910035);
-	background: -moz-linear-gradient(top, #b10900, #910035);
-	background: -ms-linear-gradient(top, #b10900, #910035);
-	background: -o-linear-gradient(top, #b10900, #910035);
-	background: linear-gradient(top, #b10900, #910035);
-	border: 1px solid #b10900;
-	border-bottom: 1px solid #b10900;
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-	box-shadow: inset 0 1px 0 0 #b10900;
-	-webkit-box-shadow: 0 1px 0 0 #b10900 inset ;
-	-moz-box-shadow: 0 1px 0 0 #b10900 inset;
-	-ms-box-shadow: 0 1px 0 0 #b10900 inset;
-	-o-box-shadow: 0 1px 0 0 #b10900 inset;
-	color: white;
-	font-weight: bold;
-	padding: 6px 20px;
-	text-align: center;
-	text-shadow: 0 -1px 0 #b10900;
 }
-button.reset:hover {
-	/*opacity:.85;*/
-	cursor: pointer;
-}
-button.reset:active {
-	border: 1px solid #b10900;
-	box-shadow: 0 0 10px 5px #6b290b inset;
-	-webkit-box-shadow:0 0 10px 5px #6b290b inset ;
-	-moz-box-shadow: 0 0 10px 5px #6b290b inset;
-	-ms-box-shadow: 0 0 10px 5px #6b290b inset;
-	-o-box-shadow: 0 0 10px 5px #6b290b inset;
+
+hr {
+	width: 95%;
+	border-color: #9e9e9e;
+	margin: 0 auto;
 }

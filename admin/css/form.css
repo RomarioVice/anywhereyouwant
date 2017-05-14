@@ -1,31 +1,41 @@
 /* === Remove input autofocus webkit === */
 *:focus {outline: none;}
 
+html {
+	height: 100%;
+}
+
 /* === Form Typography === */
 body {
 	height: 100%;
+	background-image: url(../img/bg-admin2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	min-width: 400px;
 	font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;}
 .contact_form h2, .contact_form label {font-family:Georgia, Times, "Times New Roman", serif;}
 .form_hint, .required_notification {font-size: 11px;}
 
-/* === Canvas for Parallax === */
-.parallax-window {
-	position: absolute;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	min-height: 450px;
+/* === Canvas === */
+
+.contact-form-bg {
+	display: table;
+	height: 300px;
+	width: 400px;
+	background: url(../img/bg-login.svg) center no-repeat;
+	margin: auto;
 }
 
-/* === Canvas === */
 .contact_form {
-	margin: auto;
-	min-width: 290px;
-	max-width: 290px;
-	background: burlywood;
-	padding: 10px 20px;
-	background: url(../img/bg-banner1.png);
-	border-radius: 30px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.admin-logo {
+	margin-top: -20px;
+	top: -10px;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
 /* === List Styles === */
@@ -49,10 +59,10 @@ body {
 
 /* === Popup message === */
 .canceled {
+	text-align: center;
 	font-size: medium;
-	color: red;
+	color: #FFB6C1;
 	background: url(../img/bg-banner1.png);
-	border-radius: 30px;
 }
 
 /* === Form Header === */
@@ -75,10 +85,23 @@ body {
 	color: white;
 }
 .contact_form input {
+	background: transparent;
 	height:30px;
-	width:220px;
+	width:190px;
 	padding:5px 8px;
+	color: white;
 }
+
+.contact_form input::-webkit-input-placeholder       {text-indent: 0px;   transition: text-indent 0.3s ease;}
+.contact_form input::-moz-placeholder                {text-indent: 0px;   transition: text-indent 0.3s ease;}
+.contact_form input:-moz-placeholder                 {text-indent: 0px;   transition: text-indent 0.3s ease;}
+.contact_form input:-ms-input-placeholder            {text-indent: 0px;   transition: text-indent 0.3s ease;}
+.contact_form input:focus::-webkit-input-placeholder {text-indent: 500px; transition: text-indent 0.3s ease;}
+.contact_form input:focus::-moz-placeholder          {text-indent: 500px; transition: text-indent 0.3s ease;}
+.contact_form input:focus:-moz-placeholder           {text-indent: 500px; transition: text-indent 0.3s ease;}
+.contact_form input:focus:-ms-input-placeholder      {text-indent: 500px; transition: text-indent 0.3s ease;}
+
+input::-webkit-input-placeholder { color:#ffffff; }
 
 .contact_form select{
 	height:30px;
@@ -97,9 +120,8 @@ body {
 
 	/* form element visual styles */
 	.contact_form input, .contact_form select {
-		border:1px solid #aaa;
-		box-shadow: 0px 0px 3px #ccc;
-		border-radius:2px;
+		border:0px;
+		box-shadow: 0px 0px 0px;
 		padding-right:30px;
 		-moz-transition: padding .25s;
 		-webkit-transition: padding .25s;
@@ -107,9 +129,9 @@ body {
 		transition: padding .25s;
 	}
 	.contact_form input:focus, .contact_form select:focus {
-		background: #fff;
-		border:1px solid #555;
-		box-shadow: 0 0 3px #aaa;
+		background: transparent;
+		border:0px solid #555;
+		box-shadow: 0 0 0px #aaa;
 		padding-right:70px;
 	}
 
@@ -174,33 +196,30 @@ body {
 }
 
 button.submit {
-	background-color: #e450ff;
-	background: -webkit-gradient(linear, left top, left bottom, from(#e450ff), to(#b147cc));
-	background: -webkit-linear-gradient(top, #e450ff, #b147cc);
-	background: -moz-linear-gradient(top, #e450ff, #b147cc);
-	background: -ms-linear-gradient(top, #e450ff, #b147cc);
-	background: -o-linear-gradient(top, #e450ff, #b147cc);
-	background: linear-gradient(top, #e450ff, #b147cc);
+	width: 160px;
+	height: 44px;
+	background: #f7f4f7;
+	background-image: -webkit-linear-gradient(#f7f4f7, #e3e3e3);
+	background-image: -o-linear-gradient(#f7f4f7, #e3e3e3);
+	background-image: linear-gradient(#f7f4f7, #e3e3e3);
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
 	border: 1px solid #b147cc;
-	border-bottom: 1px solid #b147cc;
-	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
 	-o-border-radius: 3px;
-	box-shadow: inset 0 1px 0 0 #d695ff;
-	-webkit-box-shadow: 0 1px 0 0 #d695ff inset ;
-	-moz-box-shadow: 0 1px 0 0 #d695ff inset;
-	-ms-box-shadow: 0 1px 0 0 #d695ff inset;
-	-o-box-shadow: 0 1px 0 0 #d695ff inset;
-	color: white;
+	color: #DA70D6;
 	font-weight: bold;
 	padding: 6px 20px;
 	text-align: center;
-	text-shadow: 0 -1px 0 #6b2879;
+	text-decoration: none;
 }
 button.submit:hover {
-	/*opacity:.85;*/
+	color: purple;
+	background: #ffffff;
+  	text-decoration: none;
 	cursor: pointer; 
 }
 button.submit:active {
@@ -210,5 +229,54 @@ button.submit:active {
 	-moz-box-shadow: 0 0 10px 5px #73398d inset;
 	-ms-box-shadow: 0 0 10px 5px #73398d inset;
 	-o-box-shadow: 0 0 10px 5px #73398d inset;
-	
+}
+
+a.submit {
+	width: 160px;
+	height: 44px;
+	background: #f7f4f7;
+	background-image: -webkit-linear-gradient(#f7f4f7, #e3e3e3);
+	background-image: -o-linear-gradient(#f7f4f7, #e3e3e3);
+	background-image: linear-gradient(#f7f4f7, #e3e3e3);
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	border: 1px solid #b147cc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	color: #DA70D6;
+	font-weight: bold;
+	padding: 6px 18px;
+	text-align: center;
+	text-decoration: none;
+}
+a.submit:hover {
+	color: #800080;
+	background: #ffffff;
+  	text-decoration: none;
+	cursor: pointer;
+}
+
+a.submit:active {
+	border: 1px solid #b147cc;
+	box-shadow: 0 0 10px 5px #73398d inset;
+	-webkit-box-shadow:0 0 10px 5px #73398d inset ;
+	-moz-box-shadow: 0 0 10px 5px #73398d inset;
+	-ms-box-shadow: 0 0 10px 5px #73398d inset;
+	-o-box-shadow: 0 0 10px 5px #73398d inset;
+}
+
+hr {
+	width: 95%;
+	border-color: #9e9e9e;
+	margin: 0 auto;
+}
+
+.LP-bg
+{
+	margin: 0 auto;
+	background-image: url(../img/LR-bg.svg);
+	width: 250px;
 }

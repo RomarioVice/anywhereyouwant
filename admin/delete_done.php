@@ -54,7 +54,7 @@
 
 </head>
     <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-admin2.jpg">
         <?php
         include('blocks/site-header.php');
         include('blocks/menu.php');

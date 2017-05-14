@@ -28,7 +28,9 @@
 <!-- js -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/moment-with-locales.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript" src="js/pushy.min.js"></script>
 <script type="text/javascript" src="js/parallax.min.js"></script>
 <script type="text/javascript" src="https://vk.com/js/api/share.js?94" charset="windows-1251"></script>
@@ -46,4 +48,10 @@
                 
             });
         })(jQuery);
-    </script>
+</script>
+
+<script type="text/javascript">
+$(function () {
+  $('#datetimepicker1').datetimepicker({language: 'ru', pickTime: false});
+});
+</script>

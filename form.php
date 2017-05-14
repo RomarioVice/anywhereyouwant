@@ -5,7 +5,6 @@
 <?php
     include('/blocks/head.php');
 ?>
-
 <body>
     <div class="parallax-window" data-parallax="scroll" data-image-src="img/1df78147c4a8f5f19867a1a0cd0ea3c1.gif">
         <?php
@@ -19,42 +18,36 @@
                     <h1 class="font-h1">&nbsp;</h1>
                 </div>
             </div>
-            <div class="bg-container-form">
-            <!-- Your Content -->
-            <div id="container-form">
 
-                    <form class="contact_form" id="orders" action="form.php" method="POST">
-                        <ul>
                             <?php
                             if( isset($data['do_order']) ) {
                                 if (empty($errors)) {
-                                    echo '<div class="success">Заказ отправлен!</div>';
+                                    echo '<div class="success">Заказ отправлен! После обработки - с вами свяжуться!</div>';
                                 } else {
                                     echo '<div class="canceled">' . array_shift($errors) . '</div>';
                                 }
                             }
                             ?>
+            <div class="contact-form-bg">
+            <!-- Your Content -->
+
+                    <form class="contact_form" id="orders" action="form.php" method="POST" autocomplete="off">
+                        <ul>
+                        <div class="LP-bg">
                             <li>
-                                <span class="required_notification">* обозначает обязательные поля</span>
-                            </li>
-                            <li>
-                                <label for="surname">Фамилия:</label>
-                                <input type="text" name="surname_ord" placeholder="Ваша фамилия" value="" pattern="^[а-яА-Я]+$" required/>
+                                <img src="img/login_icon.svg" height="20px" width="30px"><input type="text" name="surname_ord" placeholder="Ваша фамилия" value="" pattern="^[а-яА-Я]+$" required/>
                                 <span class="form_hint">Верный формат "Киндров"</span>
-                            </li>
-                            <li>
-                                <label for="name">Имя:</label>
-                                <input type="text" name="name_ord" placeholder="Ваше имя" value="" pattern="^[а-яА-Я]+$" required/>
+                                <hr>
+                            
+                                <img src="img/login_icon.svg" height="20px" width="30px"><input type="text" name="name_ord" placeholder="Ваше имя" value="" pattern="^[а-яА-Я]+$" required/>
                                 <span class="form_hint">Верный формат "Виктор"</span>
-                            </li>
-                            <li>
-                                <label for="otc">Отчество:</label>
-                                <input type="text" name="otc_ord" placeholder="Ваше отчество" value="" pattern="^[а-яА-Я]+$" required/>
+                                <hr>
+                            
+                                <img src="img/login_icon.svg" height="20px" width="30px"><input type="text" name="otc_ord" placeholder="Ваше отчество" value="" pattern="^[а-яА-Я]+$" required/>
                                 <span class="form_hint">Верный формат "Никонович"</span>
-                            </li>
-                            <li>
-                                <label for="places">Количестов мест:</label>
-                                <input type="text" class="num-mask" name="places_ord" placeholder="Количество мест" value="" pattern="^[0-9]+$" required/>
+                                <hr>
+                            
+                                <img src="img/seats_icon.svg" height="20px" width="30px"><input type="text" class="num-mask" name="places_ord" placeholder="Количество мест" value="" pattern="^[0-9]+$" required/>
                                 <span class="form_hint">Верный формат "2"</span>
                                 <script type="text/javascript">
                                     $.jMaskGlobals = {translation: {
@@ -63,10 +56,12 @@
                                     };
                                     $('.num-mask').mask('xxx');
                                 </script>
-                            </li>
-                            <li>
-                                <label for="places">Контактный телефон:</label>
-                                <input class="phone-mask" type="text" name="phone_ord" placeholder="Контактный телефон" value="" required/>
+                                <hr>
+
+                                  <img src="img/phone_icon.svg" height="20px" width="30px"><input id="phone" type="text" name="phone_ord" placeholder="Контактный номер" value="" required/>
+                                <span class="form_hint">Верный формат "(095) 123-45-67"</span>
+       
+                                <!-- <img src="img/phone_icon.svg" height="20px" width="30px"><input class="phone-mask" type="text" name="phone_ord" placeholder="Контактный номер" value="" required/>
                                 <span class="form_hint">Верный формат "(095)-123-45-67"</span>
                                 <script type="text/javascript">
                                     $.jMaskGlobals = {translation: {
@@ -74,20 +69,49 @@
                                     }
                                     };
                                     $('.phone-mask').mask('(xxx)-xxx-xx-xx');
-                                </script>
-                            </li>
-                            <li>
-                                <label for="date-t">Дата поездки:</label>
-                                <input class="date-mask" type="text" name="date_t_ord" placeholder="Дата поездки" value="" required/>
-                                <span class="form_hint">Верный формат "01.01.01"</span>
+                                </script> -->
+                                <hr>
+                            
+                                <img src="img/calendar_icon.svg" height="20px" width="30px"><!-- <input class="date-mask" type="text" name="date_t_ord" placeholder="Дата поездки" value="" required/> -->
+                                <input type="text" class="date-mask" id="datetimepicker1" type="text" name="date_t_ord" placeholder="Дата поездки" value="" required/>
+                                <span class="form_hint">Верный формат "01.01.2000"</span>
                                 <script type="text/javascript">
-                                    $('.date-mask').mask('xx.xx.xx');
+                                    $('.date-mask').mask('xx.xx.xxxx');
                                 </script>
-                            </li>
-                            <li>
-                                <label for="destination">Пункт назначения:</label>
-                                <select name="destination_ord" required>
-                                    <option value=""></option>
+                                <hr>
+                           
+                                <img src="img/destination_icon.svg" height="20px" width="30px"><select name="destination_ord" required>
+                                    <option value="" disabled selected>Пункт назначения</option>
+                                    <option>Адлер</option>
+                                    <option>Алушта</option>
+                                    <option>Анапа</option>
+                                    <option>Белгород</option>
+                                    <option>Брянск</option>
+                                    <option>Геленджик</option>
+                                    <option>Гомель</option>
+                                    <option>Донецк</option>
+                                    <option>Керчь</option>
+                                    <option>Краснодар</option>
+                                    <option>Курск</option>
+                                    <option>Минск</option>
+                                    <option>Могилёв</option>
+                                    <option>Москва</option>
+                                    <option>Новгород</option>
+                                    <option>Орел</option>
+                                    <option>Санкт-Петербург</option>
+                                    <option>Севастополь</option>
+                                    <option>Симферополь</option>
+                                    <option>Сочи</option>
+                                    <option>Старый Оскол</option>
+                                    <option>Тверь</option>
+                                    <option>Тупсе</option>
+                                    <option>Феодосия</option>
+                                    <option>Ялта</option>
+                                </select>
+                                <hr>
+                          
+                                <img src="img/departure_icon.svg" height="20px" width="30px"><select name="departure_ord" required>
+                                    <option value="" disabled selected>Пункт отправки</option>
                                     <option>Адлер</option>
                                     <option>Алушта</option>
                                     <option>Анапа</option>
@@ -115,55 +139,44 @@
                                     <option>Ялта</option>
                                 </select>
                             </li>
-                            <li>
-                                <label for="departure">Пункт отправки:</label>
-                                <select name="departure_ord" required>
-                                    <option value=""></option>
-                                    <option>Адлер</option>
-                                    <option>Алушта</option>
-                                    <option>Анапа</option>
-                                    <option>Белгород</option>
-                                    <option>Брянск</option>
-                                    <option>Геленджик</option>
-                                    <option>Гомель</option>
-                                    <option>Донецк</option>
-                                    <option>Керчь</option>
-                                    <option>Краснодар</option>
-                                    <option>Курск</option>
-                                    <option>Минск</option>
-                                    <option>Могилёв</option>
-                                    <option>Москва</option>
-                                    <option>Новгород</option>
-                                    <option>Орел</option>
-                                    <option>Санкт-Петербург</option>
-                                    <option>Севастополь</option>
-                                    <option>Симферополь</option>
-                                    <option>Сочи</option>
-                                    <option>Старый Оскол</option>
-                                    <option>Тверь</option>
-                                    <option>Тупсе</option>
-                                    <option>Феодосия</option>
-                                    <option>Ялта</option>
-                                </select>
-                            </li>
+                            </div>
                             <li class="buttons">
-                                <button class="submit" type="submit" name="do_order">Отправить</button>
-                                <button class="reset" type="reset" name="reset"/>Очистить</button>
+                                <button class="submit faa-parent animated-hover" type="submit" name="do_order"><i class="fa fa-envelope fa-2x faa-ring" aria-hidden="true"></i> Отправить</button>
+                                <button class="reset faa-parent animated-hover" type="reset" name="reset"/><i class="fa fa-eraser fa-2x faa-ring" aria-hidden="true"></i> Очистить</button>
                             </li>
                         </ul>
                     </form>
-
-                </div>
+        
+        
             </div>
         </div>
 
     <?php
-    include('blocks/footer-1.php');
+    include('/blocks/footer-1.php');
     ?>
         <script>
             $(document).ready(function(){
                 $('#orders').trigger('reset');
             })
+        </script>
+
+        <script>
+
+        $("#phone").mask("(999) 999-99-99");
+
+
+        $("#phone").on("blur", function() {
+            var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+    
+            if( last.length == 3 ) {
+                var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
+                var lastfour = move + last;
+        
+                var first = $(this).val().substr( 0, 9 );
+        
+                $(this).val( first + '-' + lastfour );
+            }
+        });
         </script>
 </div>
 </body>

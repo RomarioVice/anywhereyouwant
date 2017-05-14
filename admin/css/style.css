@@ -514,6 +514,10 @@ footer a:active {
     width: 90%;
 }
 
+.fa-2x {
+  vertical-align: middle;
+}
+
 #sort_f {
     text-align: right;
 }

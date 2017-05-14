@@ -74,8 +74,8 @@ $myrow = mysql_fetch_array($result);
                     <h1 class="font-h1"></h1>
                     <!-- Your Content -->
                     <div id="container-view">
+                        <p class="view-title"><img class="view-pic" src="<?php echo $myrow['pic'] ?>"></p>
                         <p class="view-title"><?php echo $myrow['title'] ?></p>
-                        <img class="view-pic" src="<?php echo $myrow['pic'] ?>">
                         <p class="view-text"><?php echo $myrow['fullTxt']?></p>
                         <div class="social">
                             <p class="view-date">Дата публикации: <?php echo DateTime::createFromFormat('Y-m-d', $myrow['nDate'])->format('d-m-Y');?></p>

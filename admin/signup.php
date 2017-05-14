@@ -1,5 +1,7 @@
 <?php
     require "connect.php";
+    $email_to = 'Romario_12395@mail.ru';
+    $base_url='localhost/www/anywhereyouwant/admin/';
 
 
     $data = $_POST;
@@ -31,19 +33,29 @@
             $errors[] = 'Пользователь с таким Email уже существует!';
         }
 
+        $activation=md5($email_to.time()); // Encrypted email_to+timestamp
+
         if( empty($errors) ){
             // ошибок нет - можно регистрировать
             $admin = R::dispense('admins');
             $admin->login = $data['login'];
             $admin->email = $data['email'];
             $admin->password = password_hash($data['password'],PASSWORD_DEFAULT);
+            $admin->activation = $activation;
             R::store($admin);
+
+            include 'smtp/Send_Mail.php';
+            $to=$email_to;
+            $subject="Подтверждение нового сотрудника, " . $data['login'];
+            $body='Сотрудник ' . $data['login'] . ' запрашивает подтверждение аккаунта. 
+            <br/> <br/> E-mail сотрудника: ' .$data['email'].'
+            <br/> <br/> <a href="'.$base_url.'activation/'.$activation.'">'.$base_url.'activation/'.$activation.'</a>';
+            Send_Mail($to,$subject,$body);
         }
+
     }
 
 ?>
-
-<?php if( isset($_SESSION['logged_user']) ) :  ;?>
 
     <!DOCTYPE html>
     <html>
@@ -110,71 +122,77 @@
 
     </head>
     <body>
-    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg_admin.jpg">
-        <?php
-            include('blocks/site-header.php');
-            include('blocks/menu.php');
-        ?>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-admin2.jpg">
             
+            <div style="height:25px;width:100%"></div>
             <div class="row">
                 <div class="new_admin col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
                     <h1 class="font-h1">&nbsp;</h1>
                 </div>
             </div>
-            
-
-            <form class="contact_form" action="signup.php" method="POST">
-                <ul>
+            <div style="height:25px;width:100%"></div>
                         <?php
                         if( isset($data['do_signup']) ) {
                             if (empty($errors)) {
-                                echo '<div class="success"">Регистрация прошла успешно!</div>';
+                                echo '<div class="success"">Успех! Ожидайте подтверждение аккаунта главным администратором</div>';
                             } else {
                                 echo '<div class="canceled">' . array_shift($errors) . '</div>';
                             }
                         }
                             ?>
-                    <li>
-                        <p>Логин</p>
-                        <input class="log-mask" type="text" name="login" value="<?php echo @$data['login']?>" pattern="^[a-zA-Z0-9]{4,20}$" required>
-                        <span class="form_hint">Верный формат "SomeNikname" от 4 до 20 символов</span>
-                        <script>
-                            $.jMaskGlobals = {translation: {
-                                'x': {pattern: /\w/},
-                            }
-                            };
-                            $('.log-mask').mask('xxxxxxxxxxxxxxxxxxxx');
-                        </script>
-                    </li>
-                    <li>
-                        <p>Email</p>
-                        <input type="email" name="email" value="<?php echo @$data['email']?>" required>
-                        <span class="form_hint">Верный формат "SomeEmail@mail.com"</span>
-                    </li>
-                    <li>
-                        <p>Пароль</p>
-                        <input class="pas-mask" type="password" name="password" pattern="^[a-zA-Z0-9]{6,20}$" required>
-                        <span class="form_hint">Верный формат "OkRtfd4q от 6 до 20 символов"</span>
-                    </li>
-                    <li>
-                        <p>Подтвердите пароль</p>
-                        <input class="pas-mask" type="password" name="password_2" pattern="^[a-zA-Z0-9]{6,20}$" required>
-                        <span class="form_hint">Верный формат "OkRtfd4q от 6 до 20 символов"</span>
-                        <script>
-                            $.jMaskGlobals = {translation: {
-                                'x': {pattern: /\w/},
-                            }
-                            };
-                            $('.pas-mask').mask('xxxxxxxxxxxxxxxxxxxx');
-                        </script>
-                    </li>
-                    <li class="buttons">
-                        <button class="submit" type="submit" name="do_signup">Зарегистрироваться</button>
-                    </li>
-            </form>
+            <div style="height:25px;width:100%"></div>
+                <div class="contact-form-bg">
+
+                    <form class="contact_form" action="signup.php" method="POST" autocomplete="off">
+                        <ul>
+                        <br>
+                        <br>
+                            <div class="LP-bg">
+                                <li>
+                                     <img src="img/login_icon.svg" height="20px" width="30px"><input class="log-mask" type="text" name="login" value="<?php echo @$data['login']?>" pattern="^[a-zA-Z0-9]{4,20}$" required placeholder="Логин">
+                                    <span class="form_hint">Верный формат "SomeNikname" от 4 до 20 символов</span>
+                                    <script>
+                                        $.jMaskGlobals = {translation: {
+                                            'x': {pattern: /\w/},
+                                        }
+                                        };
+                                        $('.log-mask').mask('xxxxxxxxxxxxxxxxxxxx');
+                                    </script>
+                                    <hr>
+                        
+                                     <img src="img/email_icon.svg" height="20px" width="30px"><input type="email" name="email" value="<?php echo @$data['email']?>" required placeholder="Электронная почта">
+                                    <span class="form_hint">Верный формат "SomeEmail@mail.com"</span>
+                                    <hr>
+
+                                     <img src="img/password_icon.svg" height="20px" width="30px"><input class="pas-mask" type="password" name="password" pattern="^[a-zA-Z0-9]{6,20}$" required placeholder="Пароль">
+                                    <span class="form_hint">Верный формат "OkRtfd4q от 6 до 20 символов"</span>
+                                    <hr>
+                           
+                                     <img src="img/password_icon.svg" height="20px" width="30px"><input class="pas-mask" type="password" name="password_2" pattern="^[a-zA-Z0-9]{6,20}$" required placeholder="Подтвердите пароль">
+
+                                    <span class="form_hint">Верный формат "OkRtfd4q от 6 до 20 символов"</span>
+                                    <script>
+                                        $.jMaskGlobals = {translation: {
+                                            'x': {pattern: /\w/},
+                                        }
+                                        };
+                                        $('.pas-mask').mask('xxxxxxxxxxxxxxxxxxxx');
+                                    </script>
+                                </li>
+                            </div>
+                            <li class="buttons">
+                                <button class="submit faa-parent animated-hover" type="submit" name="do_signup"><i class="fa fa-check fa-2x faa-ring" aria-hidden="true"></i> Регистрация</button>
+                            </li>
+                            </ul>
+                    </form>
+                </div>
+                <br>
+                    <a href="login.php">
+                        <div class="back-to-login faa-parent animated-hover">
+                            <i class="fa fa-sign-in fa-2x faa-ring" aria-hidden="true"></i> Войти
+                        </div>
+                    </a>
             </div>
             <script type="text/javascript" src="js/pushy.min.js"></script>
         </body>
     </html>
-<?php else : header('Location: login.php');?>
-<?php endif; ?>
