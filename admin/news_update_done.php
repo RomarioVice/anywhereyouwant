@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="../admin/css/form_add.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -108,7 +109,10 @@
 		$id = $_GET['id'];
         $short_desc = substr($_POST['fullTxt'], 0, 295);
         $description = nl2br($_POST['fullTxt']);
-		$result = mysql_query("UPDATE news SET title = '$_POST[title]', pic = '$picture_name', text = '$short_desc', fullTxt = '$description' WHERE id = '$_GET[id]'");
+		$result = mysql_query("UPDATE news SET title = '$_POST[title]', text = '$short_desc', fullTxt = '$description' WHERE id = '$_GET[id]'");
+        if(!empty($_FILES['picture']['name'])) {
+            $result = mysql_query("UPDATE news SET pic = '$picture_name' WHERE id = '$_GET[id]'");
+        }
 		echo '<meta http-equiv="Refresh" content="1; URL=news.php"';
 	?>
 

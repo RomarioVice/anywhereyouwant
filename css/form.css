@@ -13,9 +13,10 @@ body {font: 14px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-ser
 
 .contact-form-bg {
 	display: table;
-	height: 500px;
-	width: 400px;
-	background: url(../img/bg-form.svg) center no-repeat;
+	height: 450px;
+	max-width: 400px;
+	background: url(../img/bg-form.svg) no-repeat center;
+	background-size: cover;
 	margin: auto;
 }
 

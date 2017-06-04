@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Администраторская панель - Увезём - куда захочешь!</title>
+    <title>Добавить новость</title>
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -59,13 +59,13 @@
                             <ul>
                                 <li>
                                     <label for="title">Заголовок:</label>
-                                    <input style="width: 100%;" type="text" name="title" placeholder="Заголовок" size="200" value="" required/>
+                                    <input style="width: 100%;" type="text" name="title" placeholder="Заголовок" size="200" value="" autocomplete="off" required/>
                                     <span class="add_form_hint">Верный формат "Добро пожаловать, дорогой Гость!"</span>
                                 </li>
                                 
                                 <li>
                                     <label for="pic">Изображение:</label> 
-                                    <input style="width: 90%; margin: 0 auto;" type="file" name="picture" placeholder="" required/>
+                                    <input style="width: 90%; margin: 0 auto;" type="file" name="picture" autocomplete="off" placeholder="" required/>
                                     <span class="add_form_hint">Изображение должно быть в разрешении 604 x 329</span>
                                 </li>
                                 <!-- <li>
@@ -75,7 +75,7 @@
 
                                 <li>
                                 <label for="fullTxt">Описание:</label>
-                                    <textarea class="add_form_textarea2" name="fullTxt" placeholder="Необходимая информация..." required></textarea>
+                                    <textarea class="add_form_textarea2" name="fullTxt" placeholder="Необходимая информация..." autocomplete="off" required></textarea>
                                 </li>
                     
                         <li class="buttons">

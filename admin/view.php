@@ -81,38 +81,28 @@ $myrow = mysql_fetch_array($result);
             ?>
             <div class="wrapper">
                 <div class="bg-container">
-                    <h1 class="font-h1"></h1>
+                    <br>
+                    <br>
                     <!-- Your Content -->
                     <div id="container-view">
-                        <p class="view-title"><?php echo $myrow['title'] ?></p>
-                        <img class="view-pic" src="<?php echo $myrow['pic'] ?>">
-                        <p class="view-text"><?php echo $myrow['fullTxt']?></p>
-                        <div class="social">
-                            <p class="view-date">Дата публикации: <?php echo DateTime::createFromFormat('Y-m-d', $myrow['nDate'])->format('d-m-Y');?></p>
-                            <p class="social-row">
-                            <script type="text/javascript"><!--
-                                document.write(VK.Share.button(false,{type: "custom", text: "<img src=\"https://vk.com/images/share_32.png\" width=\"30\" height=\"30\" />"}));
-                            --></script>
-
-                            <span id="ok_shareWidget"></span>
-                            <script>
-                                !function (d, id, did, st, title, description, image) {
-                                    var js = d.createElement("script");
-                                    js.src = "https://connect.ok.ru/connect.js";
-                                    js.onload = js.onreadystatechange = function () {
-                                        if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-                                            if (!this.executed) {
-                                                this.executed = true;
-                                                setTimeout(function () {
-                                                    OK.CONNECT.insertShareWidget(id, did, st, title, description, image);
-                                                }, 0);
-                                            }
-                                        }};
-                                    d.documentElement.appendChild(js);
-                                }(document,"ok_shareWidget",document.URL,'{"sz":30,"st":"straight","nc":1,"nt":1}',"","","");
-                            </script>
-                            </p>
+                        <br>
+                        <div id="container-links">
+                            <a class="a-news a-arrow-right" href="news.php?page=1">Новости</a>&nbsp;&nbsp;&nbsp;<a class="a-news a-arrow-right" href=""><?php echo $myrow['title'] ?></a>
                         </div>
+                        <p class="view-date"><?php echo DateTime::createFromFormat('Y-m-d', $myrow['nDate'])->format('d-m-Y');?></p>
+                        <br>
+                        <br>
+                        <img class="view-pic" src="<?php echo $myrow['pic'] ?>">
+                        <div style="width: 95%; margin: 0 auto;">
+                            <hr class="view-rules">
+                        </div>
+                        <p class="view-title"><?php echo $myrow['title'] ?></p>
+                        <p class="view-text"><?php echo $myrow['fullTxt']?></p>
+                        <div style="width: 95%; margin: 0 auto;">
+                            <hr class="view-rules">
+                        </div>
+                        <br>
+                        <br>
                     </div>
                 </div>
             </div>

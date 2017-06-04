@@ -15,7 +15,71 @@ html, body {
 }
 
     /*----index.php------*/
-.fa-2x {
+
+.view-rules {
+    margin-top: 30px;
+    height: 30px; 
+    border-style: solid; 
+    border-color: #F9B233; 
+    border-width: 1px 0 0 0; 
+    border-radius: 20px;
+} 
+.view-rules:before { 
+    display: block; 
+    content: ""; 
+    height: 30px; 
+    margin-top: -31px; 
+    border-style: solid; 
+    border-color: #F9B233; 
+    border-width: 0 0 1px 0; 
+    border-radius: 20px; 
+}
+
+.VK-share-button {
+    display: block;
+    text-align: center;
+    background-color: #45668e;
+    color: white;
+    width: 120px;
+    height: 50px;
+    padding: 10px 0px;
+    text-decoration: none;
+    border: 1px solid;
+    border-color: #3D5A7D;
+    margin: auto;
+}
+
+.VK-share-button:hover {
+    text-decoration: none;
+    background-color: #3D5A7D;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.OK-share-button {
+    display: block;
+    text-align: center;
+    background-color: #F6881F;
+    color: white;
+    width: 120px;
+    height: 50px;
+    padding: 10px 0px;
+    text-decoration: none;
+    border: 1px solid;
+    border-color: #F69A44;
+    margin: auto;
+}
+
+.OK-share-button:hover {
+    text-decoration: none;
+    background-color: #F69A44;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fa {
   vertical-align: middle;
 }
     
@@ -225,12 +289,6 @@ a.etc-main2:hover {
     width: 100%;
 }
 
-
-.ok_shareWidget {
-    position: absolute;
-    bottom: 0px;
-}
-
 .slider-show {
     border-radius: 30px;
     background: url(../img/bg-banner1.png);
@@ -298,12 +356,17 @@ ul {
 #container-view {
     padding: 0px;
     margin: 0 auto;
-    color: burlywood;
+    color: white;
     max-width: 940px;
     min-height: 300px;
-    background: url(../img/bg-banner1.png);
+    background-color: #852275;
     border-radius: 10px;
     position: relative;
+}
+
+#container-links {
+    margin-left: 20px;
+    max-width: 940px;
 }
 
 .wrapper-result {
@@ -378,7 +441,7 @@ ul {
 .menu-btn:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-    color: #DEB887;
+    /*color: #DEB887;*/
 }
 
 /* Header */
@@ -633,7 +696,6 @@ a.etc:hover {
 }
 
 .view-title {
-    padding-top: 30px;
     text-align: center;
     font-size: 20pt;
 }
@@ -647,10 +709,105 @@ a.etc:hover {
     max-width: 700px
 }
 
-.view-date {
-    color: #ffffff;
-    padding: 15px;
+
+.a-news {
+    height: 20px;
+    padding: 6px 0px;   
+    background-color: #F0FF71;
+    border-color: #d43f3a;
+    color: #8238A9;
     font-size: 9pt;
+    text-align: center;
+} 
+
+.a-news:hover {  
+    background-color: white;
+    color: #8238A9;
+    font-size: 9pt;
+    text-align: center;
+    text-decoration: none;
+} 
+
+.a-news:active {  
+    background-color: white;
+    color: #8238A9;
+    font-size: 9pt;
+    text-align: center;
+    text-decoration: none;
+} 
+
+.a-arrow-right { 
+    position: relative;
+    padding-right: 18px;
+    padding-left: 36px;
+}
+
+.a-arrow-right:before,
+.a-arrow-right:after {
+   /* make two squares (before and after), looking similar to the button */
+   content: "";
+   position: absolute;
+   /* move it down because of rounded corners */
+   top: 3px;
+   width: 19px;
+   /* same as height */
+   height: 19px;
+   /* button_outer_height / sqrt(2) */
+   background: inherit;
+   /* use parent background */
+   border: inherit;
+   /* use parent border */
+   border-left-color: transparent;
+   /* hide left border */
+   border-bottom-color: transparent;
+   /* hide bottom border */
+   border-radius: 0px 4px 0px 0px;
+   /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+   -webkit-border-radius: 0px 4px 0px 0px;
+   -moz-border-radius: 0px 4px 0px 0px;
+}
+
+.a-arrow-right:before,
+.a-arrow-right:after {
+   transform: rotate(45deg);
+   /* rotate right arrow squares 45 deg to point right */ 
+   -webkit-transform: rotate(45deg);
+   -moz-transform: rotate(45deg);
+   -o-transform: rotate(45deg);
+   -ms-transform: rotate(45deg);
+}
+
+.a-arrow-right:before {
+   /* align the "before" square to the left */
+   left: -10px;
+}
+
+.a-arrow-right:after {
+   /* align the "after" square to the right */
+   right: -10px;
+}
+
+.a-arrow-right:after {
+   /* bring arrow pointers to front */
+   z-index: 1;
+}
+
+.a-arrow-right:before {
+   /* hide arrow tails background */
+   background-color: #852275;
+}
+
+.view-date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0px 0px 0px 7px;
+    color: #8238A9;
+    text-align: center;
+    font-size: 9pt;
+    background-color: #F0FF71;
+    padding: 8px;
+    border-radius: 4px;
 }
 
 .view-pic {
@@ -916,7 +1073,7 @@ a.etc:hover {
     height: 30px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 344px) {
 
     html, body {
         overflow-x: hidden;
@@ -977,7 +1134,7 @@ a.etc:hover {
     }
 }
 
-@media screen and (min-width: 321px) and (max-width: 699px){
+@media screen and (min-width: 345px) and (max-width: 500px){
     .site-header {
         background-image: url(../img/header_bg.jpg);
         background-repeat: repeat-x;
@@ -989,7 +1146,7 @@ a.etc:hover {
 
     i.logo {
         position: absolute;
-        left: 32%;
+        left: 25%;
         background: url(../img/logo_sq_cut.png);
         background-size: cover;
         overflow:hidden;
@@ -1037,7 +1194,7 @@ a.etc:hover {
     }
 }
 
-@media screen and (min-width: 700px) and (max-width: 865px){
+@media screen and (min-width: 501px) and (max-width: 865px){
 
     html, body {
         overflow-x: hidden;

@@ -3,7 +3,7 @@
     <ul>
         <div class=menu-center>
             <a id="another" class="faa-parent animated-hover" href="../index.php"><i class="fa fa-globe fa-2x faa-tada faa-fast" aria-hidden="true"></i></a> <a id="another" class="faa-parent animated-hover" href="https://vk.com/perevozki_dnr_rossiya"><i class="fa fa-vk fa-2x faa-tada faa-fast" aria-hidden="true"></i></a> <a id="another" class="faa-parent animated-hover" href="https://ok.ru/group52624225927358"><i class="fa fa-odnoklassniki fa-2x faa-tada faa-fast" aria-hidden="true"></i></a>
-            <hr style="margin: 0px">
+            <hr style="margin: 0px;">
         </div>
         <li class="log-name"><img src="img/admin.svg" height="30px" weight="30px"> <?php echo $_SESSION['logged_user']->login; ?></li>
         <li class="pushy-link"><a class="faa-parent animated-hover" href="index.php"><img src="img/admin-orders-menu.svg" heigh="30p" width="30px" class="faa-pulse faa-fast" aria-hidden="true"></i> <strong>Стол заказов</strong></a></li>

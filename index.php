@@ -81,14 +81,13 @@ EOT;
                     <div class="co_bg col-xs-12 col-xs-0 col-md-10 col-md-offset-1 col-lg-12 col-lg-offset-0">
                         <h1 class="font-h1">&nbsp;</h1>
                     </div>
-                
 
                     <div style="height:30px;width:100%"></div>
                     <div class="col-xs-12 col-xs-offset-0">
                         <div class="contacts">
                             <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0 col-lg-4">
                                 <div class="bg_cont_1">
-                                    <img class="con1h" src="img/cont1.svg" width="150" height="150">
+                                    <img class="con1h" src="img/cont1.svg" width="150px" height="150px">
                                     <p class="cont-text faa-parent animated-hover"><i class="fa fa-phone-square fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span>+38 (063) 795-76-95</span></p>
                                     <p class="cont-text faa-parent animated-hover"><i class="fa fa-phone-square fa-2x faa-shake" aria-hidden="true"></i>&nbsp <span>+38 (071) 301-65-08</span></p>
                                 </div>
@@ -111,10 +110,6 @@ EOT;
                 
 
                 </div>
-                
-
-
-
 
             <?php
                 include('/blocks/footer-1.php');

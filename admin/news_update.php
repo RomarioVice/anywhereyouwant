@@ -77,7 +77,7 @@ $myrow = mysql_fetch_array($result);
                             <ul>
                                 <li>
                                     <label for="title">Заголовок:</label>
-                                    <input style="width: 100%;" type="text" name="title" placeholder="Заголовок" size="200" value="<?php echo $myrow['title'] ?>" required/>
+                                    <input style="width: 100%;" type="text" name="title" placeholder="Заголовок" size="200" value="<?php echo $myrow['title'] ?>" autocomplete="off" required/>
                                     <span class="add_form_hint">Верный формат "Добро пожаловать, дорогой Гость!"</span>
                                 </li>
                                 
@@ -92,11 +92,11 @@ $myrow = mysql_fetch_array($result);
                                 </li>
                                 <li>
                                 <label for="fullTxt">Описание:</label>
-                                    <textarea class="add_form_textarea2" name="fullTxt" placeholder="Необходимая информация..." required><?php echo $myrow['fullTxt'] ?></textarea>
+                                    <textarea class="add_form_textarea2" name="fullTxt" placeholder="Необходимая информация..." autocomplete="off" required><?php echo $myrow['fullTxt'] ?></textarea>
                                 </li>
                     
                         <li class="buttons">
-                            <button class="submit" type="submit" name="submit">Сохранить</button>
+                            <button class="submit" type="submit" name="submit">Редактировать</button>
                         </li>
                         </ul>
                     </form>

@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 30px;">
                         <span>Меню</span><br>
-                        <a href="index.php">Главная</a> <span>|</span> <a href="add.php">Добавить маршрут</a> <span>|</span> <a href="routes.php?page=1">Маршруты</a> <span>|</span> <a href="add-news.php">Добавить новость</a> <span>|</span> <a href="news.php?page=1">Новость</a>
+                        <a href="index.php">Заказы</a> <span>|</span> <a href="add.php">Добавить маршрут</a> <span>|</span> <a href="routes.php?page=1">Маршруты</a> <span>|</span> <a href="add-news.php">Добавить новость</a> <span>|</span> <a href="news.php?page=1">Новости</a>
                     </div>
 
                     <div class="col-xs-12 col-md-12 col-lg-12" style="z-index: 2;">

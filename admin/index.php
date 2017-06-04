@@ -76,7 +76,7 @@
                 <div id="container">
                     <div id = "center-plz">
                         <form id="sort_f" action="sort.php" method="POST">
-                            <input class="date-mask" type="text" name="sort" placeholder="Введите запрос"/>
+                            <input class="date-mask" type="text" name="sort" placeholder="Введите запрос" autocomplete="off"/>
                             <input class="delbut1" type="submit" name="do_sort" value="Поиск"/>
                            <!--  <script type="text/javascript">
                                $.jMaskGlobals = {translation: {
@@ -91,7 +91,7 @@
                     <form id="orders" action="del.php" method="POST">
                         <table class="orders">
                             <tr>
-                                <th></th>
+                                <th><input type="checkbox" name='check-all' onClick='var o=this.form.elements;for(var i=0;i<o.length-1;i++)if(o[i].type="checkbox")o[i].checked=this.checked'> </th>
                                 <th>№</th>
                                 <th>ФИО</th>
                                 <th>Кол-во мест</th>
@@ -121,7 +121,8 @@
                                     <td class="order-date">$myrow[eurodate]</td>
                                 </tr>
 EOT;
-                        }
+
+                         }
                         
                         ?>
                         </table>

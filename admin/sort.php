@@ -9,17 +9,17 @@ require "connect.php";
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Увезём - куда захочешь!</title>
+    <title>Администраторская панель - Увезём - куда захочешь!</title>
     <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pushy.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/font-awesome-animation.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/style.css">
     
 
     <!-- Favicon -->
@@ -80,7 +80,7 @@ require "connect.php";
     <form id="orders" action="del.php" method="POST">
     <table class="orders">
     <tr>
-        <th></th>
+        <th><input type="checkbox" name='check-all' onClick='var o=this.form.elements;for(var i=0;i<o.length-1;i++)if(o[i].type="checkbox")o[i].checked=this.checked'></th>
         <th>№</th>
         <th>ФИО</th>
         <th>Количетство мест</th>
